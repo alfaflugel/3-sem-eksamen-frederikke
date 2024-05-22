@@ -1,0 +1,43 @@
+---
+import MainLayout from "./MainLayout.astro";
+
+---
+<MainLayout title="Titel">
+    <article>
+        <hr>
+        <h1>Om filmen</h1>
+        <hr>
+    </article>
+    <article x-data="{ allefilm: []}" x-init="allefilm = await (await fetch('film.json')).json(); allefilm.reverse();">
+		<template x-for="film in allefilm" :key="film.id">
+				<section>
+                    <div>
+                        <img src="" alt="">
+                        <h3 x-text="film.title"></h3>
+                        <p x-text="film.beskrivelse"></p>
+                        <section class="flex flex-col">
+                            <ul>
+                                <li>Skuespillere:</li>
+                                <li>Manuskript:</li>
+                                <li>Instruktør:</li>
+                                <li>Genre:</li>
+                                <li>Længde:</li>
+                                <li>Aldersgrænse:</li>
+                            </ul>
+                            <ul class="justify-start">
+                                <li x-text="film.skuespiller"></li>
+                                <li x-text="film.manuskript"></li>
+                                <li x-text="film.instruktør"></li>
+                                <li x-text="film.genre"></li>
+                                <li x-text="film.længde"></li>
+                                <li x-text="film.alder"></li>
+                            </ul>
+                        </section>
+                    </div>
+                    <div>
+
+                    </div>
+                </section>
+			</template>
+    </article>
+</MainLayout>

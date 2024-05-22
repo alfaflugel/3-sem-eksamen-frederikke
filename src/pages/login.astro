@@ -1,0 +1,39 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+const {frontmatter} = Astro.props;
+---
+<MainLayout title="Titel">
+    <h1>Dine oplysninger</h1>
+	<article>
+        <section>
+            <h3>Din ordre</h3>
+            <img src="" alt="">
+            <ul>
+                <li>Til:</li>
+                <li></li>
+                <li>Fra:</li>
+                <li></li>
+                <li>Pris i alt:</li>
+                <li></li>
+            </ul>
+        </section>
+        <section>
+            <div>
+                <a href="/guest.astro">Gæst</a>
+                <h3>Login</h3>
+            </div>
+            <form>
+                <div>
+                    <label for="mail">E-mail</label>
+                    <input type="email" id="mail">
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                </div>
+            </form>
+        </section>
+        <Button>Til betaling</Button>
+    </article>
+</MainLayout>

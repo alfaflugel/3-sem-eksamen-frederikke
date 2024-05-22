@@ -3,7 +3,46 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 ---
 <MainLayout title="Titel">
+	<img src="" alt="">
+	<Button>Dagens program</Button>
 	<article>
-		<p>Index indhold</p>
+		<div>
+			<hr><h1>Aktuelle film</h1> <hr>
+			<h3>i dag 15/5</h3>
+			icon
+		</div>
+		<section id="Cards">
+			
+		</section>
+		<section>
+			<div>
+				<p class="font-bold">Gentofte kino har for tredje år i træk vundet bedste filmoplevelse i København</p>
+				<p>“Vi insisterer på at levere en ærlig filmoplevelse. Når man har sagt ja til at videreføre en 85 år gammel biograf, så kræver det, at man indgår en ægte kontrakt med sine gæster.(...)”</p>
+				<p>“At blive byens bedste filmoplevelse tre år i træk, er en helt utrolig ære og ganske uhørt. (...)”</p>
+			</div>
+			img
+		</section>
+		<section>
+			<div>
+				<hr> <h1>Gavekort</h1> <hr>
+			</div>
+			<p></p>
+			<div>
+				img
+				<form>
+					<div>
+						<label for="modtager">Modtagerens navn</label>
+						<input type="text" id="modtager">
+					</div>
+					<div>
+						<label for="dit">Dit navn</label>
+						<input type="text" id="dit">
+					</div>
+					<div>
+						<Button>Næste</Button>
+					</div>
+				</form>
+			</div>
+		</section>
 	</article>
 </MainLayout>

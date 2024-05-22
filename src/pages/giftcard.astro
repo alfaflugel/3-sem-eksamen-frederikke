@@ -1,0 +1,44 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+const {frontmatter} = Astro.props;
+---
+<MainLayout title="Titel">
+	<h1>Gavekort</h1>
+    <article>
+        <img src="" alt="">
+        <section>
+            <h3>Hvor meget skal gavekortet til <span>Frederik</span> være på?</h3>
+            <form class="">
+                <div x-data="{ selected: null, inputLabel: 'Input Button' }" class="text-center">
+                    <!-- Radio-like Buttons -->
+                    <button type="button" @click="selected = 1"
+                            :class="selected === 1 ? 'bg-red-600 text-beige-200' : 'bg-red-700 text-beige-200'"
+                            class="">
+                            100
+                    </button>
+                    <button type="button" @click="selected = 2"
+                            :class="selected === 2 ? 'bg-red-600 text-beige-200' : 'bg-red-700 text-beige-200'"
+                            class="">
+                            250
+                    </button>
+                    <button type="button" @click="selected = 3"
+                            :class="selected === 3 ? 'bg-red-600 text-beige-200' : 'bg-red-700 text-beige-200'"
+                            class="">
+                            500
+                    </button>
+                    <p>Vælg andet beløb</p>
+                    <!-- Input Field & Button -->
+                    <div class="mt-4 pt-8">
+                    <input type="text" @click="selected = 4"
+                            x-model="amount" placeholder="100"
+                            class="py-3 lg:px-2 text-xl lg:text-3xl rounded-full border-2 border-roed text-roed m-1 text-center focus:border-roed placeholder-lysroed"> 
+                    </div>
+                </div>
+            </form>
+            <div>
+                <Button><a href="/guest.astro">Næste</a></Button>
+            </div>
+        </section>
+    </article>
+</MainLayout>

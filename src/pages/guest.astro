@@ -1,0 +1,57 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
+const {frontmatter} = Astro.props;
+---
+<MainLayout title="Titel">
+    <h1>Dine oplysninger</h1>
+	<article>
+        <section>
+            <h3>Din ordre</h3>
+            <img src="" alt="">
+            <ul>
+                <li>Til:</li>
+                <li></li>
+                <li>Fra:</li>
+                <li></li>
+                <li>Pris i alt:</li>
+                <li></li>
+            </ul>
+        </section>
+        <section>
+            <div>
+                <h3>Gæst</h3>
+                <a href="/login.astro">Login</a>
+            </div>
+            <form>
+                <div>
+                    <label for="fornavn">Fornavn*</label>
+                    <input type="text" id="fornavn">
+                </div>
+                <div>
+                    <label for="efternavn">Efternavn*</label>
+                    <input type="text" id="efternavn">
+                </div>
+                <div>
+                    <label for="mail">E-mail*</label>
+                    <input type="email" id="mail">
+                </div>
+                <div>
+                    <label for="tlf">Telefon*</label>
+                    <input type="tel" id="tlf">
+                </div>
+            </form>
+            <form>
+                <input type="checkbox" name="alle" id="alle">
+                <label for="alle">Accepter alle nedenstående</label>
+                <input type="checkbox" name="betingelser" id="betingelser">
+                <label for="betingelser">Accepter betingelser</label>
+                <input type="checkbox" name="opret" id="opret">
+                <label for="opret">Opret bruger</label>
+                <input type="checkbox" name="nyhed" id="nyhed">
+                <label for="nyhed">Tilmeld Gentofte Kino's nyhedsbrev</label>
+            </form>
+        </section>
+        <Button>Til betaling</Button>
+    </article>
+</MainLayout>
