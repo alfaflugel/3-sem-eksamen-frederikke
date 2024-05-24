@@ -9,7 +9,15 @@
         "instruktør": "",
         "genre": "",
         "længde": "",
-        "alder": ""
+        "alder": "",
+        "idagformiddag": true,
+        "idagformiddagtid": "13:00",
+        "idageftermiddag": false,
+        "idageftermiiddagtid": "20:00",
+        "imorgenformiddag": false,
+        "imorgenformiddagtid": "12.00",
+        "imorgeneftermiddag": true,
+        "imorgeneftermiddagtid": "12.00",
     }
 
 ]
