@@ -3,11 +3,11 @@ import MainLayout from "./MainLayout.astro";
 
 ---
 <MainLayout title="Titel">
-    <article>
-        <hr>
-        <h1>Om filmen</h1>
-        <hr>
-    </article>
+    <div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-28">
+        <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
+        <h1 class="font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 text-nowrap">Om filmen</h1> 
+        <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
+    </div>
     <article x-data="{ allefilm: []}" x-init="allefilm = await (await fetch('film.json')).json(); allefilm.reverse();">
 		<template x-for="film in allefilm" :key="film.id">
 				<section>
@@ -35,7 +35,11 @@ import MainLayout from "./MainLayout.astro";
                         </section>
                     </div>
                     <div>
-
+                        <div>idag </div>
+                        <div>forestillingmorgen
+                        </div>
+                        <div>forestillingeftermiddag
+                        </div>
                     </div>
                 </section>
 			</template>

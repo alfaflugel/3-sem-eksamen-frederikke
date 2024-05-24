@@ -10,23 +10,14 @@ const {frontmatter} = Astro.props;
         <section>
             <h3>Hvor meget skal gavekortet til <span>Frederik</span> være på?</h3>
             <form class="">
-                <div x-data="{ selected: null, inputLabel: 'Input Button' }" class="text-center">
-                    <!-- Radio-like Buttons -->
-                    <button type="button" @click="selected = 1"
-                            :class="selected === 1 ? 'bg-red-600 text-beige-200' : 'bg-red-700 text-beige-200'"
-                            class="">
-                            100
-                    </button>
-                    <button type="button" @click="selected = 2"
-                            :class="selected === 2 ? 'bg-red-600 text-beige-200' : 'bg-red-700 text-beige-200'"
-                            class="">
-                            250
-                    </button>
-                    <button type="button" @click="selected = 3"
-                            :class="selected === 3 ? 'bg-red-600 text-beige-200' : 'bg-red-700 text-beige-200'"
-                            class="">
-                            500
-                    </button>
+                <div x-data="{ selectedCard: null }" class="">
+                    <div
+                        x-on:click="selectedCard = 1"
+                        x-bind:class="selectedCard === 1 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
+                        class="p-4 bg-beige-500 shadow cursor-pointer transition duration-200 ease-in-out">
+
+                    </div>
+                    
                     <p>Vælg andet beløb</p>
                     <!-- Input Field & Button -->
                     <div class="mt-4 pt-8">

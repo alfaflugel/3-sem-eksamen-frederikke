@@ -1,48 +1,93 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
+import { Image } from 'astro:assets';
+import web from '../assets/images/hero-section-lys.svg';
+import mobil from '../assets/images/hero-mobil-lys.svg';
+import tablet from '../assets/images/hero-tablet-lys.svg';
+import gavekort from '../assets/images/gavekort.svg';
+import byen from '../assets/images/byens-bedste.svg';
+import kalender from '../assets/images/kalender.svg';
 ---
 <MainLayout title="Titel">
-	<img src="" alt="">
-	<Button>Dagens program</Button>
+	<!-- indsat 3 hero billeder til hver størrelse skærm, hvor vi bruger hidden til at skjule dem der ikke skal vises i den pågældende størrelse -->
+	<Image src={web} alt="" class="hidden lg:block w-full"/>
+	<Image src={tablet} alt="" class="hidden md:block lg:hidden w-full"/>
+	<Image src={mobil} alt="" class="md:hidden w-full"/>
+	<div class=" text-center">
+		<Button>Dagens program</Button>
+	</div>
 	<article>
-		<div>
-			<hr><h1>Aktuelle film</h1> <hr>
-			<h3>i dag 15/5</h3>
-			icon
-		</div>
+		<section>
+			<div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-24">
+				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
+				<h1 class="font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 text-nowrap">Aktuelle film</h1> 
+				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
+			</div>
+			<div class="flex flex-row justify-center mt-2">
+				<h3 class="font-mos text-2xl md:text-4xl">I dag 15/5 |</h3>
+				<Image src={kalender} alt="" class="pl-2"/>
+			</div>
+		</section>
 		<section id="Cards">
+			<section class="mb-16">
+				<!-- alt hvad der omhandler lists til de aktuelle film fra i dag som card komponenter -->
+				<ul>
+					{udvalgtenyheder.map(post => 
+					<Card 
+					
+					/>
+					)}
+				</ul>
+				<!-- slut på alt hvad der omhandler lists til nyheder -->
+			</section>
 			
 		</section>
-		<section>
-			<div>
-				<p class="font-bold">Gentofte kino har for tredje år i træk vundet bedste filmoplevelse i København</p>
-				<p>“Vi insisterer på at levere en ærlig filmoplevelse. Når man har sagt ja til at videreføre en 85 år gammel biograf, så kræver det, at man indgår en ægte kontrakt med sine gæster.(...)”</p>
-				<p>“At blive byens bedste filmoplevelse tre år i træk, er en helt utrolig ære og ganske uhørt. (...)”</p>
+		<section class="kasse bg-darkblue-500 py-28 md:py-32">
+			<div class="grid lg:grid-cols-2 mx-7 md:mx-12 lg:mx-28 lg:order-1 text-beige-100">
+				<Image src={byen} alt="" class="justify-self-center lg:justify-self-end place-self-center lg:order-2 pb-6 lg:pb-0 w-3/4 md:w-1/2 lg:w-auto "/>
+				<div class="font-mont">
+					<p class="font-bold lg:text-2xl">Gentofte kino har for tredje år i træk vundet bedste filmoplevelse i København</p>
+					<p class="text-sm lg:text-xl py-8">“Vi insisterer på at levere en ærlig filmoplevelse. Når man har sagt ja til at videreføre en 85 år gammel biograf, så kræver det, at man indgår en ægte kontrakt med sine gæster.(...)”</p>
+					<p class="text-sm lg:text-xl">“At blive byens bedste filmoplevelse tre år i træk, er en helt utrolig ære og ganske uhørt. (...)”</p>
+				</div>
 			</div>
-			img
 		</section>
-		<section>
-			<div>
-				<hr> <h1>Gavekort</h1> <hr>
+		<section class="mt-20">
+			<div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-24">
+				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
+				<h1 class="font-mos text-5xl lg:text-7xl px-6">Gavekort</h1> 
+				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
 			</div>
-			<p></p>
-			<div>
-				img
-				<form>
-					<div>
+			<p class="text-center font-mont text-sm lg:text-2xl"> Køb et gavekort til en du holder af. <br> Du modtager gavekortet på din mail som en pdf.</p>
+			<div class="grid lg:grid-cols-5 mx-7 md:mx-12 lg:mx-28">
+				<form class="font-mos text-xl lg:order-2 lg:col-span-2 self-center">
+					<div class="grid grid-cols-1 pt-8">
 						<label for="modtager">Modtagerens navn</label>
-						<input type="text" id="modtager">
+						<input type="text" id="modtager" class="mt-2 bg-beige-100">
 					</div>
-					<div>
+					<div class="grid grid-cols-1 py-8">
 						<label for="dit">Dit navn</label>
-						<input type="text" id="dit">
+						<input type="text" id="dit" class="mt-2 bg-beige-100">
 					</div>
-					<div>
+					<div class="p-12">
 						<Button>Næste</Button>
 					</div>
 				</form>
+				<Image src={gavekort} alt="" class="justify-self-center w-11/12 lg:order-1 lg:col-span-3"/>
 			</div>
 		</section>
 	</article>
 </MainLayout>
+
+<!--  -->
+<style>
+	.kasse{
+		clip-path: polygon(0 0, 100% 25%, 100% 75%, 0% 100%);
+	}
+	@media (max-width: 600px) {
+		.kasse{
+		clip-path: polygon(0 0, 100% 15%, 100% 85%, 0% 100%);
+	}
+}
+</style>

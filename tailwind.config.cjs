@@ -11,8 +11,8 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'mostra':['"mostra-nuova"', 'sans-serif'],
-                'montserrat':['"montserrat"', 'sans-serif'],
+                'mos':['"mostra-nuova"', 'sans-serif'],
+                'mont':['"montserrat"', 'sans-serif'],
                 },
             colors: {
                 'red': {
@@ -73,6 +73,12 @@ module.exports = {
                     400: "#F9ECD7",
                     500: "#F8E8CE",
                   },
+            },
+            dropShadow: {
+              'drop': '0 0 2px 2px rgba(0, 0, 0, 0.25)',
+            },
+            boxShadow: {
+              'inner': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
             }
         }
     },
