@@ -7,8 +7,8 @@ const { coverimage, coveralt, posturl, posttitle, time1, time2, kortversion } = 
         <h3 class="my-4 font-mos text-2xl">{posttitle}</h3>
         <p class="text-sm">{kortversion} <span><a href={posturl} class="italic underline p-2">Læs mere</a></span></p>
         <div class="flex flex-col text-center text-beige-100 mt-8">
-            <a href="#" class="bg-red-600 w-full py-2 mb-4">{time1}</a>
-            {time2 && <a href="#" class="bg-red-600 w-full py-2">{time2}</a>}
+            <a href="#" class="bg-red-600 hover:bg-red-700 w-full py-2 mb-4">{time1}</a>
+            {time2 && <a href="#" class="bg-red-600 hover:bg-red-700 w-full py-2">{time2}</a>}
         </div>
     </section>
 </a>
