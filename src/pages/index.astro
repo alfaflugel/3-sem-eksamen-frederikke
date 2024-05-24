@@ -53,7 +53,7 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 			<!-- slut på alt hvad der omhandler lists til film  i mobile-->
 		</section>
 
-		<section id="CardsWeb" class="hidden md:block mb-16 mx-32">
+		<section id="CardsWeb" class="hidden lg:block mb-16 mx-32">
 				<!-- alt hvad der omhandler lists til film i web -->
 				<ul class="grid grid-cols-3">
 					{udvalgtefilm.map(post => 
@@ -61,7 +61,7 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 						<section class="bg-beige-500 mx-10 mt-8 p-6 font-mont">
 							<img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover  h-full w-full" />
 							<h3 class="my-4 font-mos text-2xl">{post.frontmatter.posttitle}</h3>
-							<p class="text-sm">{post.frontmatter.kortversion} <span><a href={post.frontmatter.posturl} class="italic underline p-2">Læs mere</a></span></p>
+							<p class="text-sm">{post.frontmatter.beskrivelse} <span><a href={post.frontmatter.posturl} class="italic underline p-2">Læs mere</a></span></p>
 							<div class="flex flex-col text-center text-beige-100 mt-8">
 								<a href="#" class="bg-red-600 w-full py-2 mb-4">{post.frontmatter.time1}</a>
 								{post.frontmatter.time2 && <a href="#" class="bg-red-600 w-full py-2">{post.frontmatter.time2}</a>}
