@@ -1,5 +1,56 @@
 ---
+import { Image } from 'astro:assets';
+import logo from "../assets/images/logo_plastik.svg"
+import Button from '../components/Button.astro';
 ---
-<div>
-Header
+
+<div x-data="{ showmenu: false }" class="header p-3 fixed w-full z-30" >
+    <div id="navbar" class="flex flex-row justify-between items-center">
+        <div id="logo" class="">
+            <a href="#link1"> <Image src={logo} alt=""/></a>
+
+        </div>
+        <nav id="desktopmenu" class="hidden lg:block">
+            <ul class="">
+                <li class="hover:translate-y-[-5px]"><a href="/movieoverview">Film</a></li>
+                <li class="hover:translate-y-[-5px]"><a href="#">Særarrangementer</a></li>
+                <li class="hover:translate-y-[-5px]"><a href="/about">Om biografen</a></li>
+                <li class="hover:translate-y-[-5px]"><a href="#">Kontakt</a></li>
+            </ul>
+        </nav>
+        <button id="burgermenu" class="lg:hidden bg-roed text-white rounded-full shadow-md hover:scale-110 py-3 px-7 text-lg" x-on:click="showmenu = ! showmenu">Menu</button>
+    </div>
+    <nav id="mobilmenu" class="flex flex-col content-center pt-4" 
+    x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+        <ul class="" >
+                <li class=""><a href="/movieoverview">Film</a></li>
+                <li class=""><a href="#">Særarrangementer</a></li>
+                <li class=""><a href="/about">Om biografen</a></li>
+                <li class=""><a href="#">Kontakt</a></li>
+        </ul>
+    </nav>
 </div>
+
+<style>
+
+
+.active {
+  background-color: rgba(21, 54, 119, .80);
+  backdrop-filter: blur(25px);
+  color: white;
+
+}</style>
+
+<script>
+// import { animate, scroll} from "motion";
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 50) {
+        document.querySelector('.header')?.classList.add('active');
+    } else {
+        document.querySelector('.header')?.classList.remove('active');
+    }
+});
+
+</script>
+
