@@ -1,7 +1,26 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from 'astro:assets';
+import kinoet from '../assets/images/kino_1.png';
 const {frontmatter} = Astro.props;
 ---
 <MainLayout title="Titel">
-	
+	<article>
+        
+        <div class="diplay-grid text-center justify-center">
+				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
+				<h1 class="font-mos text-5xl lg:text-6xl px-14">Formidable filmoplevelser siden 1935</h1> 
+				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
+			</div>
+			<p class="text-center font-mont text-sm lg:text-xl my-6 md:mb-24 md:mt-8"> Gentofte Kino er kendetegnet ved sin hyggelige stemning, sine mange  smukke <br> gamle detaljer og ved at der altid er gode film på programmet.</p>
+			<div class="grid lg:grid-cols-2 gap-8 "></div>
+
+            <section>
+                <Image src={kinoet} alt="" class=" w-full"/>
+            </section>
+
+
+    
+
+    </article>
 </MainLayout>
