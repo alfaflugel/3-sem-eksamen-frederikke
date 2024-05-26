@@ -2,6 +2,11 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from 'astro:assets';
 import kinoet from '../assets/images/kino_1.png';
+import kinoto from '../assets/images/kino_2.png';
+import bil from '../assets/images/bil_grafik.svg';
+import rund from '../assets/images/rundetarn_grafik.svg';
+import film from '../assets/images/MMfilm_grafik.svg';
+
 const {frontmatter} = Astro.props;
 ---
 <MainLayout title="Titel">
@@ -15,12 +20,46 @@ const {frontmatter} = Astro.props;
 			<p class="text-center font-mont text-sm lg:text-xl my-6 md:mb-24 md:mt-8"> Gentofte Kino er kendetegnet ved sin hyggelige stemning, sine mange  smukke <br> gamle detaljer og ved at der altid er gode film på programmet.</p>
 			<div class="grid lg:grid-cols-2 gap-8 "></div>
 
-            <section>
-                <Image src={kinoet} alt="" class=" w-full"/>
+            <section class="grid grid-cols-2 gap-4">
+                <div><Image src={kinoet} alt="" class=" w-full"/></div>
+                <div>
+                    <h3>Altid en god oplevelse</h3>
+                    <p>Det betyder meget for os, at en tur i  biografen er hyggelig. I vinterhalvåret er der ild i pejsen. Om sommeren  åbner vi dørene ud til den lille gård. Vi har gjort meget ud af at  indrette et stemningsfuldt caféområde i biografens foyer og vil gerne  sikre kvalitet i vores caféudvalg med bl.a. Hansen is, Fairtrade kaffe,  specialøl, vin og økologisk saft. Cafeen er indrettet med designermøbler  af bl.a. Børge Mogensen.</p>
+                    <p>Alle er velkomne i Gentofte Kino, uanset om man er kommet her fast  gennem mange år, eller man er på vej i biografen med mor og far til sin  første biograftur. Vores personale gør sig umage for altid at skabe en  god stemning for vores gæster.</p>
+
+                    <div><Image src={kinoto} alt="" class=" w-full"/></div>
+
+                    <h3>En historisk biograf</h3>
+                    <p>Gentofte Kino åbnede for offentligheden første gang den 31. marts 1938.  Alle var også dengang enige om, at Gentofte Kino var en gevinst for  biografmiljøet, og biografen blev sammenlignet med en af Københavns  dengang største biografer, Palladium.</p>
+                    <p>Gentofte Kinos biografsal var oprindelig indrettet med 564 stole. I 1989  blev alt i salen fjernet, bortset fra væggene og scenen. Herefter blev  gulvet reetableret og indretningen af den nuværende sal begyndte. I dag  rummer salen 290 pladser på gulvet. Biografen har også en loge med 6  unikke pladser. Logen er i øjeblikket under renovering, men vil snarest  stå klar til brug. </p>
+                </div>
             </section>
 
 
-    
+            <section>
+                <div><Image src={bil} alt="" class=" w-full"/></div>
+                <h4>Danmarks bedste benplads</h4>
+                <p>Gentofte Kino er stolte over at have Danmarks bedste benplads, idet der  er 2 meter mellem alle stolerækker, bortset fra bagerste rækkes to  hjørner. Her er der nemlig hele 3,5 meter.</p>
+
+                <div><Image src={rund} alt="" class=" w-full"/></div>
+                <h4>Store filmoplevelser</h4>
+                <p>Salen rummer også 6 specielt designede lysarmaturer, der sammen med  loftets indirekte belysning skaber en smuk atmosfære i det store rum.  Gentofte Kino er Danmarks næststørste enkeltsalsbiograf kun overgået af  Imperial Biografen i København. Salen er så lang, at Rundetårn kan ligge  derinde. </p>
+
+                <div><Image src={film} alt="" class=" w-full"/></div>
+                <h4>Unikke filmoplevelser i 70mm film</h4>
+                <p>70 mm-formatet er det bedste analoge filmformat med en helt enestående autenticitet og dybde i billedet og i 2020 købte biografdirektør Sune Lind Thomsen en 70mm-filmfremviser så gæsterne i Gentofte Kino nu har mulighed for at opleve film på den mest optimale måde. </p>
+                <p>I Danmark er Gentofte Kino en ud af kun 3 der kan  vise film i 70mm hvilket er helt unikt og et privilegie. Derfor har vi også etableret GIFF70 (gentofte internationale film festival) hvor man hvert år kan opleve de bedste film i 70mm.</p>
+            </section>
+            
+            
+            <section>
+                <div><Image src={kinoet} alt="" class=" w-full"/></div>
+                <p>Salen har også en scene, hvor mange kunstnere, filmskabere og musikere  jævnligt optræder. Gentofte Kino afholder løbende særarrangementer, hvor  spændende gæster introducerer og perspektivere de gode filmoplevelser.  Hold øje med hjemmesiden, hvor nye særarrangementer løbende bliver  annonceret.</p>
+                <p>Vi glæder os til at byde dig velkommen i byens bedste biograf!</p>
+
+            </section>
+
+
 
     </article>
 </MainLayout>
