@@ -1,39 +1,113 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
+import { Image } from 'astro:assets';
+import gavekort from '../assets/images/gavekort-tillykke.svg';
 const {frontmatter} = Astro.props;
 ---
 <MainLayout title="Titel">
-    <h1>Dine oplysninger</h1>
-	<article>
-        <section>
-            <h3>Din ordre</h3>
-            <img src="" alt="">
-            <ul>
-                <li>Til:</li>
-                <li></li>
-                <li>Fra:</li>
-                <li></li>
-                <li>Pris i alt:</li>
-                <li></li>
-            </ul>
-        </section>
-        <section>
-            <div>
-                <a href="/guest.astro">Gæst</a>
-                <h3>Login</h3>
-            </div>
-            <form>
-                <div>
-                    <label for="mail">E-mail</label>
-                    <input type="email" id="mail">
-                </div>
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" id="password">
-                </div>
-            </form>
-        </section>
-        <Button>Til betaling</Button>
+    <article id="breadcrumb" class="hidden md:flex gap-2 font-mont text-lg font-light mx-auto md:mx-10 lg:mx-32 mt-8">
+        <a href="/index.html">Start</a>
+        <p>&#x3e</p>
+        <a href="/giftcard">Beløb</a>
+        <p>&#x3e</p>
+        <p class="italic underline">Login</p>
+        <p>&#x3e</p>
+        <a href="#">Betal</a>
     </article>
+    <div x-data="{ showFirst: true }">
+        <article class="text-center font-mos mt-16 md:mt-0">
+            <h1 class="text-5xl md:text-7xl md:ml-20">Dine oplysninger</h1>
+            <h3 class="text-lg mt-6 md:hidden">Vil du tilføje et til gavekort til kurven?</h3>
+            <a href="/" class="text-lg underline md:hidden">Tilføj her</a>
+        </article>
+        <article class="mx-10 lg:mx-32 mt-4 md:mt-10">
+            <section class="grid md:grid-cols-3 gap-16">
+                <div class="md:col-span-2 md:order-2">
+                    <div class="grid grid-cols-2 justify-center font-mos text-2xl md:text-4xl mt-8">
+                        <button @click="showFirst = true" class="">Gæst
+                            <div :class="showFirst ? 'border-dark-500' : 'border-grey-100'" class="border-t-2 mt-2"></div>
+                        </button>
+                        <button @click="showFirst = false" class="">Login
+                            <div :class="!showFirst ? 'border-dark-500' : 'border-grey-100'" class="border-t-2 mt-2"></div>
+                        </button>
+                    </div>
+                    <div x-show="showFirst">
+                        <form class="font-mont grid md:grid-cols-2 gap-8 mt-8">
+                            <div class="grid">
+                                <label for="fornavn">Fornavn*</label>
+                                <input type="text" id="fornavn" class="mt-2 mb-4 bg-beige-100 ">
+                            </div>
+                            <div class="grid">
+                                <label for="efternavn">Efternavn*</label>
+                                <input type="text" id="efternavn" class="mt-2 mb-4 bg-beige-100 ">
+                            </div>
+                            <div class="grid">
+                                <label for="mail">E-mail*</label>
+                                <input type="email" id="mail" class="mt-2 mb-4 bg-beige-100 ">
+                            </div>
+                            <div class="grid">
+                                <label for="adgangskode">Adgangskode*</label>
+                                <input type="password" id="adgangskode" class="mt-2 mb-4 bg-beige-100 ">
+                            </div>
+                        </form>
+                        <form class="font-mont text-sm grid mt-4">
+                            <div class="mb-2">
+                                <input type="checkbox" name="alle" id="alle" class="w-6 h-6 bg-beige-100">
+                                <label for="alle" class="pl-3">Accepter alle nedenstående</label>
+                            </div>
+                            <div class="mb-2">
+                                <input type="checkbox" name="betingelser" id="betingelser" class="w-6 h-6 bg-beige-100">
+                                <label for="betingelser" class="pl-3">Accepter betingelser</label>
+                            </div>
+                            <div class="mb-2">
+                                <input type="checkbox" name="opret" id="opret" class="w-6 h-6 bg-beige-100">
+                                <label for="opret" class="pl-3">Opret bruger</label>
+                            </div>
+                            <div class="mb-2">
+                                <input type="checkbox" name="nyhed" id="nyhed" class="w-6 h-6 bg-beige-100">
+                                <label for="nyhed" class="pl-3">Tilmeld Gentofte Kino's nyhedsbrev</label>
+                            </div>
+                        </form>
+                    </div>
+                    <div x-show="!showFirst">
+                        <form class="font-mont max-w-xl mt-8 grid gap-8">
+                            <div class="grid">
+                                <label for="mail">E-mail</label>
+                                <input type="email" id="mail" class="mt-2 mb-4 bg-beige-100">
+                            </div>
+                            <div class="grid">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" class="mt-2 mb-4 bg-beige-100">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="md:order-1 mt-10">
+                    <h3 class="font-mos text-4xl md:ml-6 flex justify-center md:justify-start">Din ordre</h3>
+                    <Image src={gavekort} alt="" class="md:w-4/5 mt-8"/>
+                    <p class="font-mont text-lg mt-14 ">Gavekort pakke for 2 lille</p>
+                    <ul class="grid font-mont mt-4">
+                        <div class="flex gap-6">
+                            <li>Til:</li>
+                            <li class="font-thin">Frederik</li>
+                        </div>
+                        <div class="flex gap-6 my-4">
+                            <li>Fra:</li>
+                            <li class="font-thin">Pia</li>
+                        </div>
+                        <div class="flex gap-6">
+                            <li>Pris i alt:</li>
+                            <li class="font-thin">269 kr.</li>
+                        </div>
+
+                    </ul>
+                </div>
+            </section>
+            <div class="grid justify-center md:justify-end mt-12 md:-mt-14">
+                <h3 class="hidden md:block font-mos text-xl mb-6">Vil du tilføje et til gavekort til <br> kurven? <span> <a href="/" class="underline">Tilføj her</a></span></h3>
+                <Button>Til betaling</Button>
+            </div>
+        </article>
+    </div>
 </MainLayout>

@@ -14,11 +14,11 @@ const {frontmatter} = Astro.props;
         <p>&#x3e</p>
         <p class="italic underline">Beløb</p>
         <p>&#x3e</p>
-        <a href="/guest">Login</a>
+        <a href="/login">Login</a>
         <p>&#x3e</p>
         <a href="#">Betal</a>
     </article>
-    <article class="text-center mt-16">
+    <article class="text-center mt-8">
         <h1 class="font-mos text-5xl md:text-7xl">Gavekort</h1>
         <h3 class="font-mont text-lg md:text-2xl mt-6 md:mt-4">Hvor meget skal gavekortet til <br> <span class="italic underline">Frederik</span> være på?</h3>
     </article>
@@ -72,12 +72,13 @@ const {frontmatter} = Astro.props;
                     x-on:click="selectedCard = 4"
                     x-bind:class="selectedCard === 4 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
                     class="font-mont md:text-2xl placeholder:text-grey-100 pl-8"> 
+                    <input type="submit" class="hidden">
                 </section>
                     
                 </div>
             </form>
             <div class="grid justify-center md:justify-end mt-16">
-                <Button><a href="/guest">Næste</a></Button>
+                <Button><a href="/login">Næste</a></Button>
             </div>
     </article>
 </MainLayout>
