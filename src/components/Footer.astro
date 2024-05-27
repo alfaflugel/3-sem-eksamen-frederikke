@@ -1,6 +1,49 @@
 ---
+
+import { Image } from 'astro:assets';
+import face from '../assets/images/facebook.svg';
+import insta from '../assets/images/instagram.svg';
 ---
-<div>
-<p>Footer</p>
-</div>
+<article class="bg-darkblue-700 text-beige-100 font-mont">
+
+    <section class=" mx-7 py-8 md:mx-12 lg:mx-24 lg:py-14">
+       
+        <div>
+            <h3 class="text-xl font-medium mb-2">Gentofte Kino</h3>
+            <p class="text-sm mb-px">Adresse: Gentoftegade 39</p>
+            <p class="text-sm mb-px">2820 Gentofte</p>
+            <p class="text-sm mb-px">CVR: 41074361</p>
+
+            <h3 class="text-xl font-medium mb-2 mt-9">Kontakt</h3>
+            <p class="text-sm mb-px">tlf: +45 39 65 33 50</p>
+            <p class="text-sm mb-px">mail: mail@gentoftekino.dk</p>
+        </div>
+
+         <div>
+            <h3 class="text-xl font-medium mb-2 mt-9">Åbningstider</h3>
+            <p class="text-sm mb-px">Billetkontoret og Cafeen åbner</p>
+            <p class="text-sm mb-px">45 min før første forestilling.</p>
+            <p class="text-sm mb-px">Lukker 20 min. efter sidste forestillings start.</p>
+ 
+            <div class="my-6 flex space-x-4">
+                <Image src={face} alt="" class=" width={500} height={500}  "/>
+                 <Image src={insta} alt="" class="width={500} height={500} "></Image>
+            </div>
+
+            
+            <p class="text-sm mb-px italic">tlf: +45 39 65 33 50</p>
+            <p class="text-sm mb-px italic">mail: mail@gentoftekino.dk</p>
+        </div>
+
+
+
+
+
+    </section>
+
+    
+
+
+</article>
+
   
