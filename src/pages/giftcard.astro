@@ -1,35 +1,83 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
+import { Image } from 'astro:assets';
+import pakke1 from '../assets/images/pakke_1.svg';
+import pakke2 from '../assets/images/pakke_2_lille.svg';
+import pakke3 from '../assets/images/pakke_2_stort.svg';
+
 const {frontmatter} = Astro.props;
 ---
 <MainLayout title="Titel">
-	<h1>Gavekort</h1>
-    <article>
-        <img src="" alt="">
-        <section>
-            <h3>Hvor meget skal gavekortet til <span>Frederik</span> være på?</h3>
-            <form class="">
-                <div x-data="{ selectedCard: null }" class="">
-                    <div
-                        x-on:click="selectedCard = 1"
-                        x-bind:class="selectedCard === 1 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
-                        class="p-4 bg-beige-500 shadow cursor-pointer transition duration-200 ease-in-out">
-
-                    </div>
+    <article id="breadcrumb" class="hidden md:flex gap-2 font-mont text-lg font-light mx-auto md:mx-10 lg:mx-32 mt-8">
+        <a href="/index.html">Start</a>
+        <p>&#x3e</p>
+        <p class="italic underline">Beløb</p>
+        <p>&#x3e</p>
+        <a href="/guest">Login</a>
+        <p>&#x3e</p>
+        <a href="#">Betal</a>
+    </article>
+    <article class="text-center mt-16">
+        <h1 class="font-mos text-5xl md:text-7xl">Gavekort</h1>
+        <h3 class="font-mont text-lg md:text-2xl mt-6 md:mt-4">Hvor meget skal gavekortet til <br> <span class="italic underline">Frederik</span> være på?</h3>
+    </article>
+	 <article class="mx-auto md:mx-10 lg:mx-32">
+            <form class="mt-16 md:mt-8">
+                <div x-data="{ selectedCard: null }" class="grid justify-center">
+                    <section class="grid md:grid-cols-3 gap-6 justify-center">
+                        <div
+                            x-on:click="selectedCard = 1"
+                            x-bind:class="selectedCard === 1 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
+                            class="p-2 bg-beige-500 shadow cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 flex flex-col items-center border-2 border-beige-500">
+                            <h3 class="text-center font-mos text-3xl py-3">Pakke for 1</h3>
+                            <Image src={pakke1} alt="" class=""/>
+                            <ul class="font-mont text-sm font-medium pt-4 text-left">
+                                <li class="">1x normal billet</li>
+                                <li class="py-2">1x mellem popcorn</li>
+                                <li class="">1x mellem sodavand</li>
+                            </ul>
+                            <h4 class="font-mont text-xl font-medium text-center pt-4 pb-2">179 DKK</h4>
+                        </div>
+                        <div
+                            x-on:click="selectedCard = 2"
+                            x-bind:class="selectedCard === 2 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
+                            class="p-2 bg-beige-500 shadow cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 h-auto flex flex-col items-center border-2 border-beige-500">
+                            <h3 class="text-center font-mos text-3xl py-3">Pakke for 2 lille</h3>
+                            <Image src={pakke2} alt="" class=""/>
+                            <ul class="font-mont text-sm font-medium pt-4 text-left">
+                                <li class="">2x normal billet</li>
+                                <li class="pt-2">2x mellem sodavand</li>
+                                <li class="pt-2 text-beige-500">snyd</li>
+                            </ul>
+                            <h4 class="font-mont text-xl font-medium text-center pt-4 pb-2 items-baseline">269 DKK</h4>
+                        </div>
+                        <div
+                            x-on:click="selectedCard = 3"
+                            x-bind:class="selectedCard === 3 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
+                            class="p-2 bg-beige-500 shadow cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 flex flex-col items-center border-2 border-beige-500">
+                            <h3 class="text-center font-mos text-3xl py-3">Pakke for 2 stor</h3>
+                            <Image src={pakke3} alt="" class=""/>
+                            <ul class="font-mont text-sm font-medium pt-4 text-left">
+                                <li class="">2x normal billet</li>
+                                <li class="py-2">2x mellem popcorn</li>
+                                <li class="">2x mellem sodavand</li>
+                            </ul>
+                            <h4 class="font-mont text-xl font-medium text-center pt-4 pb-2">349 DKK</h4>
+                        </div>
+                </section>
+                <section class="grid justify-center mt-16">
+                    <label for="andet" class="font-mont text-sm md:text-2xl text-center md:text-left pb-2">Vælg andet beløb</label>
+                    <input type="text" id="andet" placeholder="100"
+                    x-on:click="selectedCard = 4"
+                    x-bind:class="selectedCard === 4 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
+                    class="font-mont md:text-2xl placeholder:text-grey-100 pl-8"> 
+                </section>
                     
-                    <p>Vælg andet beløb</p>
-                    <!-- Input Field & Button -->
-                    <div class="mt-4 pt-8">
-                    <input type="text" @click="selected = 4"
-                            x-model="amount" placeholder="100"
-                            class="py-3 lg:px-2 text-xl lg:text-3xl rounded-full border-2 border-roed text-roed m-1 text-center focus:border-roed placeholder-lysroed"> 
-                    </div>
                 </div>
             </form>
-            <div>
-                <Button><a href="/guest.astro">Næste</a></Button>
+            <div class="grid justify-center md:justify-end mt-16">
+                <Button><a href="/guest">Næste</a></Button>
             </div>
-        </section>
     </article>
 </MainLayout>

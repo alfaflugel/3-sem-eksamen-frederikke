@@ -4,54 +4,70 @@ import Button from '../components/Button.astro';
 const {frontmatter} = Astro.props;
 ---
 <MainLayout title="Titel">
-    <h1>Dine oplysninger</h1>
-	<article>
-        <section>
-            <h3>Din ordre</h3>
-            <img src="" alt="">
-            <ul>
-                <li>Til:</li>
-                <li></li>
-                <li>Fra:</li>
-                <li></li>
-                <li>Pris i alt:</li>
-                <li></li>
-            </ul>
-        </section>
-        <section>
-            <div>
-                <h3>Gæst</h3>
-                <a href="/login.astro">Login</a>
+    <article class="text-center mt-16 font-mos">
+        <h1 class=" text-5xl md:text-7xl">Gavekort</h1>
+        <h3 class="text-lg md:text-2xl mt-6 md:mt-4 md:hidden">Vil du tilføje et til gavekort til kurven?</h3>
+        <a href="/" class="text-lg md:text-2xl underline md:hidden">Tilføj her</a>
+    </article>
+	<article class="mx-10 lg:mx-32 ">
+        <section class="grid md:grid-cols-4">
+            <div class="md:col-span-3 md:order-2">
+                <div class="flex">
+                    <h3>Gæst</h3>
+                    <a href="/login.astro">Login</a>
+                </div>
+                <form class="font-mont grid md:grid-cols-2 ">
+                    <div class="grid">
+                        <label for="fornavn">Fornavn*</label>
+                        <input type="text" id="fornavn" class="mt-2 mb-4 bg-beige-100 ">
+                    </div>
+                    <div class="grid">
+                        <label for="efternavn">Efternavn*</label>
+                        <input type="text" id="efternavn" class="mt-2 mb-4 bg-beige-100 ">
+                    </div>
+                    <div class="grid">
+                        <label for="mail">E-mail*</label>
+                        <input type="email" id="mail" class="mt-2 mb-4 bg-beige-100 ">
+                    </div>
+                    <div class="grid">
+                        <label for="adgangskode">Adgangskode*</label>
+                        <input type="password" id="adgangskode" class="mt-2 mb-4 bg-beige-100 ">
+                    </div>
+                </form>
+                <form class="font-mont text-sm grid mt-2">
+                    <div class="mb-2">
+                        <input type="checkbox" name="alle" id="alle" class="w-6 h-6 bg-beige-100">
+                        <label for="alle" class="pl-3">Accepter alle nedenstående</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" name="betingelser" id="betingelser" class="w-6 h-6 bg-beige-100">
+                        <label for="betingelser" class="pl-3">Accepter betingelser</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" name="opret" id="opret" class="w-6 h-6 bg-beige-100">
+                        <label for="opret" class="pl-3">Opret bruger</label>
+                    </div>
+                    <div class="mb-2">
+                        <input type="checkbox" name="nyhed" id="nyhed" class="w-6 h-6 bg-beige-100">
+                        <label for="nyhed" class="pl-3">Tilmeld Gentofte Kino's nyhedsbrev</label>
+                    </div>
+                </form>
             </div>
-            <form>
-                <div>
-                    <label for="fornavn">Fornavn*</label>
-                    <input type="text" id="fornavn">
-                </div>
-                <div>
-                    <label for="efternavn">Efternavn*</label>
-                    <input type="text" id="efternavn">
-                </div>
-                <div>
-                    <label for="mail">E-mail*</label>
-                    <input type="email" id="mail">
-                </div>
-                <div>
-                    <label for="adgangskode">Adgangskode*</label>
-                    <input type="password" id="adgangskode">
-                </div>
-            </form>
-            <form>
-                <input type="checkbox" name="alle" id="alle">
-                <label for="alle">Accepter alle nedenstående</label>
-                <input type="checkbox" name="betingelser" id="betingelser">
-                <label for="betingelser">Accepter betingelser</label>
-                <input type="checkbox" name="opret" id="opret">
-                <label for="opret">Opret bruger</label>
-                <input type="checkbox" name="nyhed" id="nyhed">
-                <label for="nyhed">Tilmeld Gentofte Kino's nyhedsbrev</label>
-            </form>
+            <div class="md:order-1">
+                <h3>Din ordre</h3>
+                <img src="" alt="">
+                <ul>
+                    <li>Til:</li>
+                    <li></li>
+                    <li>Fra:</li>
+                    <li></li>
+                    <li>Pris i alt:</li>
+                    <li></li>
+                </ul>
+            </div>
         </section>
-        <Button>Til betaling</Button>
+        <div>
+            <Button>Til betaling</Button>
+        </div>
     </article>
 </MainLayout>

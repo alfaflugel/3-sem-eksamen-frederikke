@@ -73,6 +73,9 @@ module.exports = {
                     400: "#F9ECD7",
                     500: "#F8E8CE",
                   },
+                  'grey': {
+                    100: '#818181'
+                  }
             },
             dropShadow: {
               'drop': '0 0 2px 2px rgba(0, 0, 0, 0.25)',

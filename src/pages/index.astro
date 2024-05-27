@@ -60,7 +60,7 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 
 		<section id="CardsWeb" class="hidden md:block mb-16 mx-20 lg:mx-32 mt-16">
 				<!-- alt hvad der omhandler lists til film i web -->
-				<ul class="grid grid-cols-3 gap-4 w-fit">
+				<ul class="grid grid-cols-3 justify-center gap-4 w-fit">
 					{udvalgtefilm.map(post => 
 					<li class=""> <span><a href={post.frontmatter.posturl}></a></span>
 						<section class="bg-beige-500 px-4 pt-4 lg:px-8 lg:pt-8 p-6 font-mont">
@@ -95,7 +95,7 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 			</div>
 			<p class="text-center font-mont text-sm lg:text-xl my-6 md:mb-24 md:mt-8"> Køb et gavekort til en du holder af. <br> Du modtager gavekortet på din mail som en pdf.</p>
 			<div class="grid lg:grid-cols-2 gap-8 ">
-				<form class="font-mos text-xl lg:order-2  self-center">
+				<form class="font-mos text-xl lg:order-2 self-center">
 					<div class="grid grid-cols-1 pt-8">
 						<label for="modtager">Modtagerens navn</label>
 						<input type="text" id="modtager" class="mt-2 bg-beige-100">
