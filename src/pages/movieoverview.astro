@@ -1,14 +1,109 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Button from '../components/Button.astro';
 const {frontmatter} = Astro.props;
+import Card from '../components/Card.astro';
+const film = await Astro.glob('./movies/*.md');
+
+const sorteredefilm = film.sort((a, b) => {
+    if (a.frontmatter.date < b.frontmatter.date) return -1;
+    if (a.frontmatter.date > b.frontmatter.date) return 1;
+    return 0;
+});
 ---
 <MainLayout title="Titel">
-    <div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-28">
+    <div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-28 mb-24">
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
         <h1 class="font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 text-nowrap">Film</h1> 
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
     </div>
-    
-
+    <section id="CardsMobile" class="mb-16 md:hidden">
+        <!-- alt hvad der omhandler lists til film card komponent i mobile-->
+        <ul>
+            {sorteredefilm.map(post => 
+            <Card 
+                coverimage={post.frontmatter.coverimage} 
+                coverimagealt={post.frontmatter.coveralt}
+                posturl={post.url}
+                posttitle={post.frontmatter.title}
+                kortversion={post.frontmatter.beskrivelse}
+                time1={post.frontmatter.time1}
+                time2={post.frontmatter.time2}
+            />
+            )}
+        </ul>
+        <!-- slut på alt hvad der omhandler lists til film  i mobile-->
+    </section>    
+    <section id="CardsWeb" class="hidden md:block mx-28">
+        <!-- alt hvad der omhandler lists til film i web -->
+        <ul class=" grid gap-12">
+            {sorteredefilm.map(post => 
+            <li class=""> <span><a href={post.frontmatter.posturl}></a></span>
+                <section class="bg-beige-500 font-mont flex flex-row gap-10 items-center">
+                    <img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover p-10" />
+                    <div>
+                        <h3 class="font-mos text-5xl">{post.frontmatter.title}</h3>
+                        <p class="mt-2 text-sm w-1/2">{post.frontmatter.beskrivelse} <span><a href={post.frontmatter.posturl} class="">Læs mere</a></span></p>
+                        <section class="flex gap-11 font-mos text-lg">
+                            <div class="grid">
+                                <h3>I dag 17/5</h3>
+                                <Button variant="secondary" size="small">14:15</Button>
+                                <Button variant="secondary" size="small">17:15</Button>
+                            </div>
+                            <div class="grid">
+                                <h3>I morgen 18/5</h3>
+                                <Button variant="secondary" size="small">20:00</Button>
+                            </div>
+                            <div class="grid">
+                                <h3>Onsdag 19/5</h3>
+                            </div>
+                            <div class="grid">
+                                <h3>Torsdag 20/5</h3>
+                                <Button variant="secondary" size="small">14:00</Button>
+                                <Button variant="secondary" size="small">20:00</Button>
+                            </div>
+                            <div class="grid">
+                                <h3>Fredag 21/5</h3>
+                                <Button variant="secondary" size="small">20:00</Button>
+                            </div>
+                            <div >
+                                <h3>Lørdag 22/5</h3>
+                                <Button variant="secondary" size="small">14:00</Button>
+                            </div>
+                        </section>
+                        
+                        <table class="mt-16">
+                            <tr class="font-mos text-lg">
+                                <td>I dag 17/5</td>
+                                <td class="px-11">I morgen 18/5</td>
+                                <td>Onsdag 19/5</td>
+                                <td class="px-11">Torsdag 20/5</td>
+                                <td>Fredag 21/5</td>
+                                <td class="pl-11">Lørdag 22/5</td>
+                            </tr>
+                            <tr>
+                                <td><Button variant="secondary" size="small">14:15</Button></td>
+                                <td><Button variant="secondary" size="small" >20:00</Button></td>
+                                <td></td>
+                                <td><Button variant="secondary" size="small">14:00</Button></td>
+                                <td><Button variant="secondary" size="small">20:00</Button></td>
+                                <td><Button variant="secondary" size="small">14:00</Button></td>
+                            </tr>
+                            <tr>
+                                <td><Button variant="secondary" size="small">17:15</Button></td>
+                                <td class="px-11"></td>
+                                <td></td>
+                                <td> <Button variant="secondary" size="small">20:00</Button></td>
+                                <td></td>
+                                <td class="pl-11"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+            </li>
+            )}
+        </ul> 
+        <!-- slut på alt hvad der omhandler lists til film i web -->
+</section>
 	
 </MainLayout>
