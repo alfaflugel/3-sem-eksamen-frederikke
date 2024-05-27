@@ -12,29 +12,31 @@ const {frontmatter} = Astro.props;
 
 ---
 <MainLayout title="Titel">
-	<article class=" md:mx-12 lg:mx-28">
+	<article class=" md:mx-12 mt-36 lg:mx-28 lg:mt-44">
         
-        <div class="diplay-grid text-center justify-center">
-				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
-				<h1 class="font-mos text-5xl lg:text-6xl px-14">Formidable filmoplevelser siden 1935</h1> 
-				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
-			</div>
-			<p class="mb-10 text-center font-mont text-sm lg:text-xl my-6 md:mb-24 md:mt-8 lg:mb-32"> Gentofte Kino er kendetegnet ved sin hyggelige stemning, sine mange  smukke <br> gamle detaljer og ved at der altid er gode film på programmet.</p>
+      	<!-- Overskriften med stregerne, hvor vi bruger hidden for at gemme stregerne i mobil -->
+			<div class=" text-center  lg:mx-24">
+				
+				<h1 class="mb-10 font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 ">Formidable filmoplevelser 
+                     siden 1935</h1> 
+			
 		
+			<p class="mb-20 mx-7 text-center font-mont text-lg lg:text-xl my-6 md:mt-8 "> Gentofte Kino er kendetegnet ved sin hyggelige stemning, sine mange  smukke gamle detaljer og ved at der altid er gode film på programmet.</p>
+			</div>
 
-        <section class="mx-7 mb-10 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-36 lg:mb-32">
+        <section class="mx-7 mb-10 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-20 lg:mb-20">
                 <div class="flex items-center justify-center"><Image src={kinoet} alt="" class=" w-full"/></div>
                 <div class="flex flex-col justify-center">
-                    <h3 class="text-xl mb-6 font-medium">Altid en god oplevelse</h3>
+                    <h3 class="text-2xl mb-6 font-medium font-mos">Altid en god oplevelse</h3>
                     <p class="font-mont text-base mb-4">Det betyder meget for os, at en tur i  biografen er hyggelig. I vinterhalvåret er der ild i pejsen. Om sommeren  åbner vi dørene ud til den lille gård. Vi har gjort meget ud af at  indrette et stemningsfuldt caféområde i biografens foyer og vil gerne  sikre kvalitet i vores caféudvalg med bl.a. Hansen is, Fairtrade kaffe,  specialøl, vin og økologisk saft. Cafeen er indrettet med designermøbler  af bl.a. Børge Mogensen.</p>
                     <p class="font-mont text-base">Alle er velkomne i Gentofte Kino, uanset om man er kommet her fast  gennem mange år, eller man er på vej i biografen med mor og far til sin  første biograftur. Vores personale gør sig umage for altid at skabe en  god stemning for vores gæster.</p>
                 </div>
         </section>
 
-        <section class="mx-7 mb-16 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-36 lg:mb-32">
+        <section class="mx-7 mb-16 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-20 lg:mb-32">
                 <div class="flex items-center justify-center lg:order-2"><Image src={kinoto} alt="" class=" w-full"/></div>
                 <div  class="flex flex-col justify-center">
-                    <h3 class="text-xl mb-6 font-medium">En historisk biograf</h3>
+                    <h3 class="text-2xl mb-6 font-medium font-mos">En historisk biograf</h3>
                     <p class="font-mont text-base mb-4">Gentofte Kino åbnede for offentligheden første gang den 31. marts 1938.  Alle var også dengang enige om, at Gentofte Kino var en gevinst for  biografmiljøet, og biografen blev sammenlignet med en af Københavns  dengang største biografer, Palladium.</p>
                     <p class="font-mont text-base">Gentofte Kinos biografsal var oprindelig indrettet med 564 stole. I 1989  blev alt i salen fjernet, bortset fra væggene og scenen. Herefter blev  gulvet reetableret og indretningen af den nuværende sal begyndte. I dag  rummer salen 290 pladser på gulvet. Biografen har også en loge med 6  unikke pladser. Logen er i øjeblikket under renovering, men vil snarest  stå klar til brug. </p>
                 </div>
@@ -77,7 +79,7 @@ const {frontmatter} = Astro.props;
           </section>
 </div>
 
-        <section class="mx-7 mb-10 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-36 lg:mb-32">
+        <section class="mx-7 mb-10 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-20 lg:mb-32">
 
             <div class="flex items-center justify-center"><Image src={kinotre} alt="" class=" w-full"/></div>
             <div class="flex flex-col justify-center">
