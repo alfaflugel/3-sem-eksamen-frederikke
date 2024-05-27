@@ -29,7 +29,7 @@ const {frontmatter} = Astro.props;
                         <div
                             x-on:click="selectedCard = 1"
                             x-bind:class="selectedCard === 1 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
-                            class="p-2 bg-beige-500 shadow cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 flex flex-col items-center border-2 border-beige-500">
+                            class="p-2 bg-beige-500 cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 flex flex-col items-center border-2 border-beige-500 drop-shadow-drop">
                             <h3 class="text-center font-mos text-3xl py-3">Pakke for 1</h3>
                             <Image src={pakke1} alt="" class=""/>
                             <ul class="font-mont text-sm font-medium pt-4 text-left">
@@ -42,7 +42,7 @@ const {frontmatter} = Astro.props;
                         <div
                             x-on:click="selectedCard = 2"
                             x-bind:class="selectedCard === 2 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
-                            class="p-2 bg-beige-500 shadow cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 h-auto flex flex-col items-center border-2 border-beige-500">
+                            class="p-2 bg-beige-500 cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 h-auto flex flex-col items-center border-2 border-beige-500 drop-shadow-drop">
                             <h3 class="text-center font-mos text-3xl py-3">Pakke for 2 lille</h3>
                             <Image src={pakke2} alt="" class=""/>
                             <ul class="font-mont text-sm font-medium pt-4 text-left">
@@ -55,7 +55,7 @@ const {frontmatter} = Astro.props;
                         <div
                             x-on:click="selectedCard = 3"
                             x-bind:class="selectedCard === 3 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
-                            class="p-2 bg-beige-500 shadow cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 flex flex-col items-center border-2 border-beige-500">
+                            class="p-2 bg-beige-500 cursor-pointer transition duration-200 ease-in-out max-w-72 md:w-auto lg:max-w-72 flex flex-col items-center border-2 border-beige-500 drop-shadow-drop">
                             <h3 class="text-center font-mos text-3xl py-3">Pakke for 2 stor</h3>
                             <Image src={pakke3} alt="" class=""/>
                             <ul class="font-mont text-sm font-medium pt-4 text-left">
@@ -71,7 +71,7 @@ const {frontmatter} = Astro.props;
                     <input type="text" id="andet" placeholder="100"
                     x-on:click="selectedCard = 4"
                     x-bind:class="selectedCard === 4 ? 'border-2 border-darkblue-400' : 'hover:border-2 hover:border-red-500'"
-                    class="font-mont md:text-2xl placeholder:text-grey-100 pl-8"> 
+                    class="font-mont md:text-2xl placeholder:text-grey-100 pl-8 shadow-inner"> 
                     <input type="submit" class="hidden">
                 </section>
                     

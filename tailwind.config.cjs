@@ -73,10 +73,10 @@ module.exports = {
         },
       },
       dropShadow: {
-        drop: "0 0 2px 2px rgba(0, 0, 0, 0.25)",
+        drop: "-2px 2px 10px rgba(0, 0, 0, 0.25)",
       },
       boxShadow: {
-        inner: "inset 1px -2px 3px 0 rgba(0, 0, 0, 0.1)",
+        inner: "inset 1px -2px 3px 0 rgba(0, 0, 0, 0.25)",
       },
     },
   },
