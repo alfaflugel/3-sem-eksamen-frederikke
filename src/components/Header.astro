@@ -1,12 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import logo from "../assets/images/logo.svg";
 import burgermenu from "../assets/images/burgermenu.svg";
 ---
 
-<div x-data="{ showmenu: false }" class="header p-4 fixed top-0 left-0 w-full bg-blue-700 z-50" >
+<div x-data="{ showmenu: false }" class="header p-4 fixed top-0 left-0 w-full bg-blue-700" >
     <div id="navbar" class="flex flex-row justify-between">
         <div id="logo" class="">
-            <a href="/../index.html"><img src="" alt=""></a>
+            <a class="mw-" href="/../index.html"><Image src={logo} alt=""/></a>
         </div>
         <nav id="desktopmenu" class="hidden lg:block">
             <ul class="flex flex-row gap-4 text-2xl text-beige-100 font-mos">
@@ -16,7 +17,7 @@ import burgermenu from "../assets/images/burgermenu.svg";
                 <li class=""><a href="#index">Kontakt</a></li>
             </ul>
         </nav>
-        <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"><img src="/assets/images/burgermenu.svg" alt=""></button>
+        <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"><Image src={burgermenu} alt=""/></button>
     </div>
     <nav id="mobilmenu" class="flex flex-col content-center pt-4" 
     x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
