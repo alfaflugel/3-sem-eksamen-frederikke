@@ -76,7 +76,7 @@ module.exports = {
         drop: "0 0 2px 2px rgba(0, 0, 0, 0.25)",
       },
       boxShadow: {
-        inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.1)",
+        inner: "inset 1px -2px 3px 0 rgba(0, 0, 0, 0.1)",
       },
     },
   },
