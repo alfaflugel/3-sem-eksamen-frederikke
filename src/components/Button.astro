@@ -1,5 +1,30 @@
 ---
+
+
+// Henter parametrene fra Astro.props
+const { variant= "primary", size = "default" } = Astro.props; 
+
+//Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
+
+const buttonStyling = "font-mont text-beige-100 text-xl"; 
+
+ 
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
+const variantClasses = {
+    "primary": "text-xl bg-red-600 active:bg-red-700",
+    "secondary": "text-xl bg-red-600 active:bg-red-700"
+};
+
+//Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
+const sizeClasses = {
+
+"default": "px-20 py-4",
+
+"large": "px-24 py-2",
+
+"small": " px-6 py-2"
+
+};
 ---
-<div>
-    <button><slot /></button>
-</div>
+<!--Sæt classes for den pågældende knap sammen ved hjælp af Astros class:list -->
+<button class:list={[buttonStyling, variantClasses[variant], sizeClasses[size]]}><slot /></button>
