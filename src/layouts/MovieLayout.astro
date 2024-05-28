@@ -66,9 +66,9 @@ const {frontmatter} = Astro.props;
 				<!-- slut på alt hvad der omhandler lists til film i web -->
 		</section>
 
-        <section class="hidden md:block mt-14">
+        <section class="hidden md:block mt-14 md:mx-12 lg:mx-24">
 
-  <section class="bg-beige-500 font-mont flex flex-row gap-10 items-center p-20 mb-24">
+  <section class="bg-beige-500 font-mont md:grid lg:flex lg:flex-row gap-10 items-center p-20 mb-24">
                     <img src={frontmatter.coverimage} alt={frontmatter.coveralt} class="object-cover" />
                    <div class="">
                     <div>
@@ -78,17 +78,17 @@ const {frontmatter} = Astro.props;
                     </div>
 
                      <div class="pt-14">
-                                <ul class="grid md:grid-cols-2  lg:grid-cols-3 ">
+                                <ul class="grid grid-cols-3 ">
                                     <li >Skuespillere: </li>
                                     <li class="pb-6 col-span-2 ">{frontmatter.skuespillere}</li>
                                     <li>Manuskript: </li>
-                                       <li class=" col-span-2 md:pb-4 lg:pb-2">{frontmatter.manuskript}</li>
+                                       <li class=" col-span-2 pb-2">{frontmatter.manuskript}</li>
                                     <li>Instruktør: </li>
-                                     <li class=" col-span-2 md:pb-4 lg:pb-2"> {frontmatter.director}</li>
+                                     <li class=" col-span-2 pb-2"> {frontmatter.director}</li>
                                      <li>Genre: </li>
-                                     <li class=" col-span-2 md:pb-4 lg:pb-2"> {frontmatter.genre}</li>
+                                     <li class=" col-span-2 pb-2"> {frontmatter.genre}</li>
                                       <li>Længde: </li>
-                                      <li class=" col-span-2 md:pb-4 lg:pb-2"> {frontmatter.length}</li>
+                                      <li class=" col-span-2 pb-2"> {frontmatter.length}</li>
                                        <li>Aldersgrænse: </li>
                                         <li class=" col-span-2">{frontmatter.age}</li>
                                 </ul>
