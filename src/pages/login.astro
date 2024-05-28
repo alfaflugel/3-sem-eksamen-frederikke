@@ -87,20 +87,13 @@ const {frontmatter} = Astro.props;
                     <h3 class="font-mos text-4xl md:ml-6 flex justify-center md:justify-start">Din ordre</h3>
                     <Image src={gavekort} alt="" class="md:w-4/5 mt-8 drop-shadow-drop"/>
                     <p class="font-mont text-lg mt-14 ">Gavekort pakke for 2 lille</p>
-                    <ul class="grid font-mont mt-4">
-                        <div class="flex gap-6">
-                            <li>Til:</li>
-                            <li class="font-thin">Frederik</li>
-                        </div>
-                        <div class="flex gap-6 my-4">
-                            <li>Fra:</li>
-                            <li class="font-thin">Pia</li>
-                        </div>
-                        <div class="flex gap-6">
-                            <li>Pris i alt:</li>
-                            <li class="font-thin">269 kr.</li>
-                        </div>
-
+                    <ul class="grid grid-cols-3 font-mont mt-4">
+                        <li class="">Til:</li>
+                        <li class="font-thin col-span-2">Frederik</li>
+                        <li class="mt-2">Fra:</li>
+                        <li class="font-thin col-span-2 mt-2">Pia</li>
+                        <li class="mt-2">Pris i alt:</li>
+                        <li class="font-thin col-span-2 mt-2">269 kr.</li>
                     </ul>
                 </div>
             </section>
