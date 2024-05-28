@@ -38,12 +38,12 @@ const sorteredefilm = film.sort((a, b) => {
         <!-- alt hvad der omhandler lists til film i web -->
         <ul class="grid gap-12">
             {sorteredefilm.map(post => 
-            <li class=""> <span><a href={post.frontmatter.posturl}></a></span>
-                <section class="bg-beige-500 font-mont flex flex-row lg:gap-10 items-center">
+            <li class=""> <span><a href={post.url}>
+                <section class="bg-beige-500 drop-shadow-drop font-mont flex flex-row lg:gap-10 items-center">
                     <img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover p-10" />
                     <div>
                         <h3 class="font-mos text-5xl mt-8 lg:mt-0">{post.frontmatter.title}</h3>
-                        <p class="mt-2 text-sm w-3/4 lg:w-1/2">{post.frontmatter.beskrivelse} <span><a href={post.frontmatter.posturl} class="">Læs mere</a></span></p>
+                        <p class="mt-2 text-sm w-3/4 lg:w-1/2">{post.frontmatter.beskrivelse} <span><a href={post.url} class="">Læs mere</a></span></p>
                         <section class="grid grid-cols-3 lg:grid-cols-7 gap-2 font-mos md:text-base lx:text-lg mt-8 lg:mt-16 text-center">
                             <div>
                                 <h3>I dag <br class="hidden lg:block xl:hidden"> 17/5</h3>
@@ -77,6 +77,7 @@ const sorteredefilm = film.sort((a, b) => {
                         </section>
                     </div>
                 </section>
+            </a></span>
             </li>
             )}
         </ul> 

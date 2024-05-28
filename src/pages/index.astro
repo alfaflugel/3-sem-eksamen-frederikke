@@ -20,15 +20,17 @@ const sorteredefilm = film.sort((a, b) => {
 const udvalgtefilm = sorteredefilm.slice(0, 3);
 ---
 <MainLayout title="Titel">
-	<!-- indsat 3 hero billeder til hver størrelse skærm, hvor vi bruger hidden til at skjule dem der ikke skal vises i den pågældende størrelse -->
-	<Image src={web} alt="" class="hidden lg:block w-full"/>
-	<Image src={tablet} alt="" class="hidden md:block lg:hidden w-full"/>
-	<Image src={mobil} alt="" class="md:hidden w-full"/>
-	<div class=" text-center mb-11 md:mb-24 lg:mb-24">
-		<Button variant="primary" size="default">Dagens program</Button>
-	</div>
+	<article class="grid justify-center">
+		<!-- indsat 3 hero billeder til hver størrelse skærm, hvor vi bruger hidden til at skjule dem der ikke skal vises i den pågældende størrelse -->
+		<Image src={web} alt="" class="hidden lg:block w-fit"/>
+		<Image src={tablet} alt="" class="hidden md:block lg:hidden w-fit"/>
+		<Image src={mobil} alt="" class="md:hidden w-full"/>
+		<div class=" text-center mb-11 md:mb-24 lg:mb-24">
+			<Button variant="primary" size="default"><a href="#today">Dagens program</a></Button>
+		</div>
+	</article>
 	<article>
-		<section class="mb-16 md:mb-24 lg:mb-24">
+		<section id="today" class="mb-16 md:mb-24 lg:mb-24">
 			<!-- Overskriften med stregerne, hvor vi bruger hidden for at gemme stregerne i mobil -->
 			<div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-24">
 				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
@@ -62,16 +64,17 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 				<!-- alt hvad der omhandler lists til film i web -->
 				<ul class="grid grid-cols-3 justify-center gap-16 w-fit">
 					{udvalgtefilm.map(post => 
-					<li class=""> <span><a href={post.frontmatter.posturl}></a></span>
-						<section class="bg-beige-500 px-4 pt-4 lg:px-6 lg:pt-6 p-6 font-mont">
+					<li class=""><span><a href={post.url}>
+						<section class="bg-beige-500 drop-shadow-drop px-4 pt-4 lg:px-6 lg:pt-6 p-6 font-mont">
 							<img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover  h-full w-full" />
 							<h3 class="my-4 font-mos text-lg lg:text-2xl">{post.frontmatter.title}</h3>
-							<p class="text-xs lg:text-sm">{post.frontmatter.beskrivelse} <span><a href={post.frontmatter.posturl} class="italic underline p-2">Læs mere</a></span></p>
+							<p class="text-xs lg:text-sm">{post.frontmatter.beskrivelse} <span><a href={post.url} class="italic underline p-2">Læs mere</a></span></p>
 							<div class="flex flex-col text-center text-beige-100 mt-8 text-sm lg:text-lg items-baseline self-end">
-								<a href="#" class="bg-red-600 w-full py-2 mb-4">{post.frontmatter.time1}</a>
-								{post.frontmatter.time2 && <a href="#" class="bg-red-600 w-full py-2">{post.frontmatter.time2}</a>}
+								<a href="#" class="bg-red-600 drop-shadow-drop w-full py-2 mb-4">{post.frontmatter.time1}</a>
+								{post.frontmatter.time2 && <a href="#" class="bg-red-600 drop-shadow-drop w-full py-2">{post.frontmatter.time2}</a>}
 							</div>
 						</section>
+					</a></span>
 					</li>
 					)}
 				</ul> 
@@ -105,7 +108,7 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 						<input type="text" id="dit" class="mt-2 bg-beige-100">
 					</div>
 					<div class="px-12 lg:p-12">
-						<Button variant="primary" size="default">Næste</Button>
+						<Button variant="primary" size="default"><a href="/giftcard.html">Næste</a></Button>
 					</div>
 				</form>
 				<Image src={gavekort} alt="" class="justify-self-center md:justify-self-start lg:order-1 "/>

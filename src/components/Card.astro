@@ -2,7 +2,7 @@
 const { coverimage, coveralt, posturl, posttitle, time1, time2, kortversion } = Astro.props;
 ---
 <a href={posturl}>
-    <section class="bg-beige-500 mx-10 mt-8 p-6 font-mont">
+    <section class="bg-beige-500 drop-shadow-drop mx-10 mt-8 p-6 font-mont">
         <img src={coverimage} alt={coveralt} class="object-cover h-full w-full" />
         <h3 class="my-4 font-mos text-2xl">{posttitle}</h3>
         <p class="text-sm">{kortversion} <span><a href={posturl} class="italic underline p-2">Læs mere</a></span></p>
