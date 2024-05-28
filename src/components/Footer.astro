@@ -1,6 +1,73 @@
 ---
+
+import { Image } from 'astro:assets';
+import face from '../assets/images/facebook.svg';
+import insta from '../assets/images/instagram.svg';
+import logo from '../assets/images/logo.svg';
+import rapport from '../assets/images/rapportkontrol_footer.png';
+import byens from '../assets/images/byens-bedste.svg';
+import bio from '../assets/images/bioklub_footer.png';
+import eu from '../assets/images/europa_footer.png';
 ---
-<div>
-<p>Footer</p>
-</div>
+<article class="bg-darkblue-700 text-beige-100 font-mont mt-16 md:mt-28 lg:mt-28">
+
+    <section class=" mx-7 py-8 md:mx-12 lg:mx-24 lg:py-14">
+
+        <div  class="grid gap-6 grid-cols-1 md:grid-cols-3">
+            <div>
+                <h3 class="text-xl font-medium mb-2">Gentofte Kino</h3>
+                <p class="text-sm mb-px">Adresse: Gentoftegade 39</p>
+                <p class="text-sm mb-px">2820 Gentofte</p>
+                <p class="text-sm mb-px">CVR: 41074361</p>
+
+                <h3 class="text-xl font-medium mb-2 mt-9">Kontakt</h3>
+                <p class="text-sm mb-px">tlf: +45 39 65 33 50</p>
+                <p class="text-sm mb-px">mail: mail@gentoftekino.dk</p>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-medium mb-2 mt-9 md:mt-0 lg:mt-0">Åbningstider</h3>
+                <p class="text-sm mb-px">Billetkontoret og Cafeen åbner</p>
+                <p class="text-sm mb-px">45 min før første forestilling.</p>
+                <p class="text-sm mb-px">Lukker 20 min. efter sidste forestillings start.</p>
+    
+                <div class="my-6 flex space-x-4">
+                    <Image src={face} alt="" class=" width={500} height={500}  "/>
+                    <Image src={insta} alt="" class="width={500} height={500} "></Image>
+                </div>
+
+                
+                <p class="text-sm mb-px italic">tlf: +45 39 65 33 50</p>
+                <p class="text-sm mb-px italic">mail: mail@gentoftekino.dk</p>
+            </div>
+
+
+            <div>
+                <div class="mt-9 md:mt-0 lg:mt-0 ">
+                    <Image src={logo} alt="" class=" md:ml-auto lg:ml-auto width={500} height={500} "></Image>
+                </div>
+
+                <div class="grid gap-10 grid-cols-2 mt-9 justify-center items-center">
+                    <Image src={rapport} alt="" class=" md:ml-auto lg:ml-auto width={100} height={200}"></Image>
+                    <Image src={byens} alt="" class=" md:ml-auto lg:ml-auto width={100} height={200}"></Image>
+                </div>
+
+                
+                <div class="grid gap- grid-cols-2 mt-9">
+                    <Image src={bio} alt="" class=" md:ml-auto lg:ml-auto width={500} height={500} "></Image>
+                    <Image src={eu} alt="" class=" md:ml-auto lg:ml-auto width={500} height={500} "></Image>
+                </div>
+            </div>
+            
+        </div>
+
+
+
+    </section>
+
+    
+
+
+</article>
+
   

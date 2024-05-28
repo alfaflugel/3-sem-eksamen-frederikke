@@ -24,11 +24,11 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 	<Image src={web} alt="" class="hidden lg:block w-full"/>
 	<Image src={tablet} alt="" class="hidden md:block lg:hidden w-full"/>
 	<Image src={mobil} alt="" class="md:hidden w-full"/>
-	<div class=" text-center">
+	<div class=" text-center mb-11 md:mb-24 lg:mb-24">
 		<Button variant="primary" size="default">Dagens program</Button>
 	</div>
 	<article>
-		<section>
+		<section class="mb-16 md:mb-24 lg:mb-24">
 			<!-- Overskriften med stregerne, hvor vi bruger hidden for at gemme stregerne i mobil -->
 			<div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-24">
 				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
@@ -58,9 +58,9 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 			<!-- slut på alt hvad der omhandler lists til film  i mobile-->
 		</section>
 
-		<section id="CardsWeb" class="hidden md:block mb-16 mx-20 lg:mx-32 mt-16">
+		<section id="CardsWeb" class="hidden md:block mx-20 lg:mx-40 md:mb-24 lg:mb-24">
 				<!-- alt hvad der omhandler lists til film i web -->
-				<ul class="grid grid-cols-3 justify-center gap-4 w-fit">
+				<ul class="grid grid-cols-3 justify-center gap-20 w-fit">
 					{udvalgtefilm.map(post => 
 					<li class=""> <span><a href={post.frontmatter.posturl}></a></span>
 						<section class="bg-beige-500 px-4 pt-4 lg:px-8 lg:pt-8 p-6 font-mont">
@@ -93,7 +93,7 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 				<h1 class="font-mos text-5xl lg:text-8xl px-14">Gavekort</h1> 
 				<hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
 			</div>
-			<p class="text-center font-mont text-sm lg:text-xl my-6 md:mb-24 md:mt-8"> Køb et gavekort til en du holder af. <br> Du modtager gavekortet på din mail som en pdf.</p>
+			<p class="text-center font-mont text-sm lg:text-xl mt-6 lg:mb-24 md:mt-8"> Køb et gavekort til en du holder af. <br> Du modtager gavekortet på din mail som en pdf.</p>
 			<div class="grid lg:grid-cols-2 gap-8 ">
 				<form class="font-mos text-xl lg:order-2 self-center">
 					<div class="grid grid-cols-1 pt-8">
@@ -104,7 +104,7 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 						<label for="dit">Dit navn</label>
 						<input type="text" id="dit" class="mt-2 bg-beige-100">
 					</div>
-					<div class="p-12">
+					<div class="px-12 lg:p-12">
 						<Button variant="primary" size="default">Næste</Button>
 					</div>
 				</form>
