@@ -69,8 +69,8 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 							<h3 class="my-4 font-mos text-lg lg:text-2xl">{post.frontmatter.title}</h3>
 							<p class="text-xs lg:text-sm">{post.frontmatter.beskrivelse} <span><a href={post.url} class="italic underline p-2">Læs mere</a></span></p>
 							<div class="flex flex-col text-center text-beige-100 mt-8 text-sm lg:text-lg items-baseline self-end">
-								<a href="#" class="bg-red-600 drop-shadow-drop w-full py-2 mb-4">{post.frontmatter.time1}</a>
-								{post.frontmatter.time2 && <a href="#" class="bg-red-600 drop-shadow-drop w-full py-2">{post.frontmatter.time2}</a>}
+								<a href="/" class="bg-red-600 drop-shadow-drop w-full py-2 mb-4">{post.frontmatter.time1}</a>
+								{post.frontmatter.time2 && <a href="/" class="bg-red-600 drop-shadow-drop w-full py-2">{post.frontmatter.time2}</a>}
 							</div>
 						</section>
 					</a></span>
@@ -100,11 +100,11 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 				<form class="font-mos text-xl lg:order-2 self-center">
 					<div class="grid grid-cols-1 pt-8">
 						<label for="modtager">Modtagerens navn</label>
-						<input type="text" id="modtager" class="mt-2 bg-beige-100 shadow-inner">
+						<input type="text" id="modtager" class="mt-2 bg-beige-100 shadow-inner font-mont" placeholder="Frederik">
 					</div>
 					<div class="grid grid-cols-1 py-8">
 						<label for="dit">Dit navn</label>
-						<input type="text" id="dit" class="mt-2 bg-beige-100 shadow-inner">
+						<input type="text" id="dit" class="mt-2 bg-beige-100 shadow-inner font-mont" placeholder="Pia">
 					</div>
 					<div class="px-12 lg:p-12">
 						<Button variant="primary" size="default"><a href="/giftcard.html">Næste</a></Button>
