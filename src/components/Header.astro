@@ -19,7 +19,7 @@ import burgermenu from "../assets/images/burgermenu.svg";
         </nav>
         <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"><Image src={burgermenu} alt=""/></button>
     </div>
-    <nav id="mobilmenu" class="flex flex-col content-center pt-4" 
+    <nav id="mobilmenu" class="flex flex-col content-center pt-4 lg:hidden" 
     x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
         <ul class=" text-beige-100 font-mos text-2xl ">
             <li class="text-center py-2 border-y-2"><a href="/../movieoverview.html">Film</a></li>
