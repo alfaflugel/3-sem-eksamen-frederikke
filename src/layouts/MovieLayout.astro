@@ -68,27 +68,27 @@ const {frontmatter} = Astro.props;
 
         <section class="hidden md:block mt-14">
 
-  <section class="bg-beige-500 font-mont flex flex-row lg:gap-10 items-center">
-                    <img src={frontmatter.coverimage} alt={frontmatter.coveralt} class="object-cover p-10" />
-                   <div class=" pb-10 pr-6">
+  <section class="bg-beige-500 font-mont flex flex-row gap-10 items-center p-20 mb-24">
+                    <img src={frontmatter.coverimage} alt={frontmatter.coveralt} class="object-cover" />
+                   <div class="">
                     <div>
-                        <h3 class="font-mos text-4xl my-8">{frontmatter.title}</h3>
+                        <h3 class="font-mos text-4xl pb-8">{frontmatter.title}</h3>
                       <p class="text-base lg:text-sm"><slot /></p>
                       
                     </div>
 
                      <div class="pt-14">
-                                <ul class="grid grid-cols-3 ">
+                                <ul class="grid md:grid-cols-2  lg:grid-cols-3 ">
                                     <li >Skuespillere: </li>
-                                    <li class="pb-6 col-span-2">{frontmatter.skuespillere}</li>
+                                    <li class="pb-6 col-span-2 ">{frontmatter.skuespillere}</li>
                                     <li>Manuskript: </li>
-                                       <li class=" col-span-2">{frontmatter.manuskript}</li>
+                                       <li class=" col-span-2 md:pb-4 lg:pb-2">{frontmatter.manuskript}</li>
                                     <li>Instruktør: </li>
-                                     <li class=" col-span-2"> {frontmatter.director}</li>
+                                     <li class=" col-span-2 md:pb-4 lg:pb-2"> {frontmatter.director}</li>
                                      <li>Genre: </li>
-                                     <li class=" col-span-2"> {frontmatter.genre}</li>
+                                     <li class=" col-span-2 md:pb-4 lg:pb-2"> {frontmatter.genre}</li>
                                       <li>Længde: </li>
-                                      <li class=" col-span-2"> {frontmatter.length}</li>
+                                      <li class=" col-span-2 md:pb-4 lg:pb-2"> {frontmatter.length}</li>
                                        <li>Aldersgrænse: </li>
                                         <li class=" col-span-2">{frontmatter.age}</li>
                                 </ul>
@@ -98,11 +98,11 @@ const {frontmatter} = Astro.props;
 						</div>
                 </section>
         </section>
-<section class="bg-beige-500 hidden md:block justify-center  mt-8 py-10">
-    <h3 class="font-mos text-4xl text-center ">Spilletider</h3>
+<section class="bg-beige-500 hidden md:block justify-center  mt-8 py-10 ">
+    <h3 class="font-mos text-4xl text-center pb-6">Spilletider</h3>
     <div class="flex items-center justify-center">
         <Image src={left} alt="" class=" w-9"/>
-         <div class=" grid grid-cols-3 md:px-6 lg:pl-20 lg:grid-cols-7 gap-2 font-mos md:text-base lx:text-lg mt-8 lg:mt-16 text-center">
+         <div class=" grid grid-cols-3 md:px-6 lg:grid-cols-6 gap-2 font-mos md:text-base lx:text-lg text-center">
                             <div>
                                 <h3>I dag <br class="hidden lg:block xl:hidden"> 17/5</h3>
                                 <div class="my-2">
