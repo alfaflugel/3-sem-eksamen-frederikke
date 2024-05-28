@@ -1,47 +1,35 @@
 ---
 import MainLayout from "./MainLayout.astro";
-
+const {frontmatter} = Astro.props;
 ---
 <MainLayout title="Titel">
     <div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-28">
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
-        <h1 class="font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 text-nowrap">Om filmen</h1> 
+        <h1 class="font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 whitespace-nowrap">Om filmen</h1> 
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
     </div>
-    <article x-data="{ allefilm: []}" x-init="allefilm = await (await fetch('film.json')).json(); allefilm.reverse();">
-		<template x-for="film in allefilm" :key="film.id">
-				<section>
-                    <div>
-                        <img src="" alt="">
-                        <h3 x-text="film.title"></h3>
-                        <p x-text="film.beskrivelse"></p>
-                        <section class="flex flex-col">
-                            <ul>
-                                <li>Skuespillere:</li>
-                                <li>Manuskript:</li>
-                                <li>Instruktør:</li>
-                                <li>Genre:</li>
-                                <li>Længde:</li>
-                                <li>Aldersgrænse:</li>
-                            </ul>
-                            <ul class="justify-start">
-                                <li x-text="film.skuespiller"></li>
-                                <li x-text="film.manuskript"></li>
-                                <li x-text="film.instruktør"></li>
-                                <li x-text="film.genre"></li>
-                                <li x-text="film.længde"></li>
-                                <li x-text="film.alder"></li>
-                            </ul>
-                        </section>
-                    </div>
-                    <div>
-                        <div>idag </div>
-                        <div>forestillingmorgen
-                        </div>
-                        <div>forestillingeftermiddag
-                        </div>
-                    </div>
-                </section>
-			</template>
+    <article>
+
+		<section class="md:hidden mx-auto grid grid-cols-1 ">
+				<!-- alt hvad der omhandler lists til film i web -->
+				<div class="justify-center gap-4 w-fit">
+				
+					
+						<section class=" bg-beige-500 px-4 pt-4 lg:px-8 lg:pt-8 p-6 font-mont">
+							<img src={frontmatter.coverimage} alt={frontmatter.coveralt} class="object-cover  h-full w-full" />
+							<h3 class="my-4 font-mos text-lg lg:text-2xl">{frontmatter.title}</h3>
+							<p class="text-xs lg:text-sm"><slot /></p>
+                            <div class="faktaboks">
+                                <ul>
+                                    <li>Skuespillere: {frontmatter.skuespillere}</li>
+                                </ul>
+                            </div>
+						
+						</section>
+				
+					
+				 </div>
+				<!-- slut på alt hvad der omhandler lists til film i web -->
+		</section>
     </article>
 </MainLayout>

@@ -8,11 +8,17 @@ beskrivelse: "I 1961 har Dag Hammarskjöld et år tilbage i sin stilling som FN'
 time1: "I dag 17/5 kl 12:00"
 time2: "I dag 17/5 kl 21:00"
 date: "17"
+skuespillere: "Mikael Persbrandt, Thure Lindhardt, Francis Chouler, Cian Barry"
+manuskript: "Ulf Ryberg"
+director: "Per Fly"
+genre: "Drama, Thriller"
+length: "01:54"
+age: ""
 ---
 
 I 1961 har Dag Hammarskjöld et år tilbage i sin stilling som FN's Generalsekretær. Efterfølgende skal han flytte til sit hus på Österlen og nyde den længe ventede frihed. Samtidig raser den kolde krig for fuld kraft, og brændpunktet er Congo. Dag Hammarskjöld påtager sig opgaven at formidle fred og enhed i landet. En umulig opgave, ifølge mange. En selvmordsmission, ifølge andre.
 
-*Kilde: Nordisk Film*
+_Kilde: Nordisk Film_
 
 - Skuespillere:
 - Mikael Persbrandt, Thure Lindhardt, Francis Chouler, Cian Barry
