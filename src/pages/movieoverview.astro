@@ -40,7 +40,7 @@ const sorteredefilm = film.sort((a, b) => {
             {sorteredefilm.map(post => 
             <li class=""> <span><a href={post.url}>
                 <section class="bg-beige-500 drop-shadow-drop font-mont flex flex-row lg:gap-10 items-center">
-                    <img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover p-10" />
+                    <img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover max-w-prose p-10" />
                     <div>
                         <h3 class="font-mos text-5xl mt-8 lg:mt-0">{post.frontmatter.title}</h3>
                         <p class="mt-2 text-sm w-3/4 lg:w-1/2">{post.frontmatter.beskrivelse} <span><a href={post.url} class="">Læs mere</a></span></p>
