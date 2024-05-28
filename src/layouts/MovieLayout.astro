@@ -1,35 +1,141 @@
 ---
 import MainLayout from "./MainLayout.astro";
+import Button from '../components/Button.astro';
+import { Image } from 'astro:assets';
+import left from '../assets/images/arrow-left.svg';
+import right from '../assets/images/arrow-right.svg';
 const {frontmatter} = Astro.props;
 ---
 <MainLayout title="Titel">
-    <div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-28">
+   
+    <div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-28 mt-36 lg:mt-44">
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
         <h1 class="font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 whitespace-nowrap">Om filmen</h1> 
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
     </div>
-    <article>
+    <article class="mx-10">
 
-		<section class="md:hidden mx-auto grid grid-cols-1 ">
+		<section class="md:hidden grid grid-cols-1 mt-12">
 				<!-- alt hvad der omhandler lists til film i web -->
-				<div class="justify-center gap-4 w-fit">
+				<div class="mx-auto">
 				
 					
-						<section class=" bg-beige-500 px-4 pt-4 lg:px-8 lg:pt-8 p-6 font-mont">
+						<section class=" bg-beige-500 px-4 pt-4 lg:px-8 lg:pt-8 p-6 font-mont mb-10">
 							<img src={frontmatter.coverimage} alt={frontmatter.coveralt} class="object-cover  h-full w-full" />
-							<h3 class="my-4 font-mos text-lg lg:text-2xl">{frontmatter.title}</h3>
+							<h3 class="my-4 pt-5 font-mos text-3xl lg:text-2xl">{frontmatter.title}</h3>
 							<p class="text-xs lg:text-sm"><slot /></p>
-                            <div class="faktaboks">
-                                <ul>
-                                    <li>Skuespillere: {frontmatter.skuespillere}</li>
+                            <div class="pt-14">
+                                <ul class="grid grid-cols-2">
+                                    <li >Skuespillere: </li>
+                                    <li class="pb-6">{frontmatter.skuespillere}</li>
+                                    <li>Manuskript: </li>
+                                       <li>{frontmatter.manuskript}</li>
+                                    <li>Instruktør: </li>
+                                     <li> {frontmatter.director}</li>
+                                     <li>Genre: </li>
+                                     <li> {frontmatter.genre}</li>
+                                      <li>Længde: </li>
+                                      <li>{frontmatter.length}</li>
+                                       <li>Aldersgrænse: </li>
+                                        <li>{frontmatter.age}</li>
                                 </ul>
+                           
+                            
                             </div>
 						
 						</section>
 				
+							<div class=" grid justify-center gap-6">
+                                <h3 class="font-mos text-3xl text-center">Spilletider</h3>
+								<select class=" bg-blue-400 font-mont border-none " tabindex="0">
+																			<option >I dag 17/5 &nbsp; kl. 14:15</option>
+																			<option >I dag 17/5 &nbsp; kl. 17:15</option>
+																			<option >I morgen 18/5 &nbsp; kl. 20:00</option>
+																			<option >Torsdag 20/5 &nbsp; kl. 14:00</option>
+																			<option >Fredag 21/5 &nbsp; kl. 20:00</option>
+																			<option >Lørdag 22/5 &nbsp; kl. 14:00</option>
+																			<option >Mandag 24/5 &nbsp; kl. 14:15</option>
+																			<option >Mandag 24/5 &nbsp; kl. 17:15</option>
+																			<option >Tirsdag 25/5 &nbsp; kl. 20:00</option>
+																	</select>
+                                                                    
+								
+						   </div>
 					
 				 </div>
 				<!-- slut på alt hvad der omhandler lists til film i web -->
 		</section>
+
+        <section class="hidden md:block mt-14">
+
+  <section class="bg-beige-500 font-mont flex flex-row lg:gap-10 items-center">
+                    <img src={frontmatter.coverimage} alt={frontmatter.coveralt} class="object-cover p-10" />
+                   <div class=" pb-10 pr-6">
+                    <div>
+                        <h3 class="font-mos text-4xl my-8">{frontmatter.title}</h3>
+                      <p class="text-base lg:text-sm"><slot /></p>
+                      
+                    </div>
+
+                     <div class="pt-14">
+                                <ul class="grid grid-cols-3 ">
+                                    <li >Skuespillere: </li>
+                                    <li class="pb-6 col-span-2">{frontmatter.skuespillere}</li>
+                                    <li>Manuskript: </li>
+                                       <li class=" col-span-2">{frontmatter.manuskript}</li>
+                                    <li>Instruktør: </li>
+                                     <li class=" col-span-2"> {frontmatter.director}</li>
+                                     <li>Genre: </li>
+                                     <li class=" col-span-2"> {frontmatter.genre}</li>
+                                      <li>Længde: </li>
+                                      <li class=" col-span-2"> {frontmatter.length}</li>
+                                       <li>Aldersgrænse: </li>
+                                        <li class=" col-span-2">{frontmatter.age}</li>
+                                </ul>
+                           
+                            
+                            </div>
+						</div>
+                </section>
+        </section>
+<section class="bg-beige-500 hidden md:block justify-center  mt-8 py-10">
+    <h3 class="font-mos text-4xl text-center ">Spilletider</h3>
+    <div class="flex items-center justify-center">
+        <Image src={left} alt="" class=" w-9"/>
+         <div class=" grid grid-cols-3 md:px-6 lg:pl-20 lg:grid-cols-7 gap-2 font-mos md:text-base lx:text-lg mt-8 lg:mt-16 text-center">
+                            <div>
+                                <h3>I dag <br class="hidden lg:block xl:hidden"> 17/5</h3>
+                                <div class="my-2">
+                                    <Button variant="secondary" size="small">14:15</Button>
+                                </div>
+                                <Button variant="secondary" size="small">17:15</Button>
+                            </div>
+                            <div>
+                                <h3 class="mb-2">I morgen <br class="hidden lg:block xl:hidden"> 18/5</h3>
+                                <Button variant="secondary" size="small">20:00</Button>
+                            </div>
+                            <div>
+                                <h3>Onsdag <br class="hidden lg:block xl:hidden"> 19/5</h3>
+                            </div>
+                            <div>
+                                <h3 class="mt-4 lg:mt-0">Torsdag <br class="hidden lg:block xl:hidden"> 20/5</h3>
+                                <div class="my-2">
+                                    <Button variant="secondary" size="small">14:00</Button>
+                                </div>
+                                <Button variant="secondary" size="small">20:00</Button>
+                            </div>
+                            <div>
+                                <h3 class="mb-2 mt-4 lg:mt-0">Fredag <br class="hidden lg:block xl:hidden"> 21/5</h3>
+                                <Button variant="secondary" size="small">20:00</Button>
+                            </div>
+                            <div>
+                                <h3 class="mb-2 mt-4 lg:mt-0">Lørdag <br class="hidden lg:block xl:hidden"> 22/5</h3>
+                                <Button variant="secondary" size="small">14:00</Button>
+                            </div>
+                      </div>
+                      <Image src={right} alt="" class=" w-9"/>
+                      </div>
+                      </section>
     </article>
+
 </MainLayout>
