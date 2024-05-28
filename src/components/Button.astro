@@ -6,13 +6,13 @@ const { variant= "primary", size = "default" } = Astro.props;
 
 //Definer den styling (Tailwind classes, der gør sig gældende for alle knapper
 
-const buttonStyling = "font-mont text-beige-100 text-xl"; 
+const buttonStyling = "font-mont text-beige-100"; 
 
  
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter 
 const variantClasses = {
     "primary": "text-xl bg-red-600 hover:bg-red-700 focus:shadow-inner",
-    "secondary": "text-xl bg-red-600 hover:bg-red-700 focus:shadow-inner"
+    "secondary": "bg-red-600 hover:bg-red-700 focus:shadow-inner"
 };
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
@@ -20,9 +20,9 @@ const sizeClasses = {
 
 "default": "px-20 py-4",
 
-"large": "px-24 py-2",
+"large": "px-24 py-2 text-xl",
 
-"small": " px-6 py-2"
+"small": "w-20 xl:w-24 py-2 text-sm lg:text-base"
 
 };
 
