@@ -2,6 +2,7 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Button from '../components/Button.astro';
 import Card from '../components/Card.astro';
+import Link from '../components/Link.astro';
 import { Image } from 'astro:assets';
 import web from '../assets/images/hero_web.svg';
 import mobil from '../assets/images/hero_mobil.svg';
@@ -107,7 +108,7 @@ const udvalgtefilm = sorteredefilm.slice(0, 3);
 						<input type="text" id="dit" class="mt-2 bg-beige-100 shadow-inner font-mont" placeholder="Pia">
 					</div>
 					<div class="py-8 flex justify-center md:justify-end">
-						<Button variant="primary" size="default"><a href="/giftcard.html">Næste</a></Button>
+						<Link variant="primary" size="default" href="/giftcard.html">Næste</Link>
 					</div>
 				</form>
 				<Image src={gavekort} alt="" class="justify-self-center md:justify-self-start lg:order-1 "/>
