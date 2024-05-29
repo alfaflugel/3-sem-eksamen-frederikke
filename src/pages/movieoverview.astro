@@ -14,7 +14,7 @@ const sorteredefilm = film.sort((a, b) => {
 <MainLayout title="Titel">
     <div class="flex flex-row text-center mx-16 md:mb-24 md:mx-12 mt-36 lg:mx-28 lg:mt-44">
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
-        <h1 class="font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 text-nowrap">Film</h1> 
+        <h1 class="font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 text-nowrap forward">Film</h1> 
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
     </div>
     <section id="CardsMobile" class="mb-16 md:hidden">
@@ -34,56 +34,119 @@ const sorteredefilm = film.sort((a, b) => {
         </ul>
         <!-- slut på alt hvad der omhandler lists til film  i mobile-->
     </section>    
+
+
     <section id="CardsWeb" class="hidden md:block lg:mx-10 xl:mx-24">
-        <!-- alt hvad der omhandler lists til film i web -->
-        <ul class="grid gap-12">
-            {sorteredefilm.map(post => 
-            <li class=""> <span><a href={post.url}>
-                <section class="bg-beige-500 drop-shadow-drop font-mont flex flex-row lg:gap-10 items-center">
-                    <img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover max-w-prose p-10" />
-                    <div>
+            <!-- alt hvad der omhandler lists til film i web -->
+            <div class="grid gap-12">
+                { sorteredefilm.map(post => 
+                    <section class="bg-beige-500 drop-shadow-drop font-mont flex flex-row lg:gap-10 items-center">
                         <div>
-                        <h3 class="font-mos text-5xl mt-8 lg:mt-0">{post.frontmatter.title}</h3>
-                        <p class="mt-2 text-sm w-3/4 lg:w-1/2">{post.frontmatter.beskrivelse} <span><a href={post.url} class="">Læs mere</a></span></p>
-                    </div>
-                        <section class="grid grid-cols-3 lg:grid-cols-7 gap-2 font-mos md:text-base lx:text-lg mt-8 lg:mt-16 text-center">
+                            <img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover max-w-prose p-10" />
+                        </div>
+                        <div> 
                             <div>
-                                <h3>I dag <br class="hidden lg:block xl:hidden"> 17/5</h3>
-                                <div class="my-2">
-                                    <Button variant="secondary" size="small">14:15</Button>
+                                <h3 class="font-mos text-5xl mt-8 lg:mt-0">{post.frontmatter.title}</h3>
+                                <p class="prose">{post.frontmatter.beskrivelse} </p>
+                                <p class="mt-2 text-sm w-3/4 lg:w-1/2"><span><a href={post.url} class="">Læs mere</a></span></p>
+                            </div>
+                            <section class="grid grid-cols-3 lg:grid-cols-7 gap-2 font-mos md:text-base lx:text-lg mt-8 lg:mt-16 text-center">
+                                <div class="grid grid-cols-1 gap-2 content-start">
+                                    <div>I dag <br class="hidden lg:block xl:hidden"> 17/5</div>
+                                    <div><Button variant="secondary" size="small">14:15</Button></div>
+                                    <div><Button variant="secondary" size="small">17:15</Button></div> 
                                 </div>
-                                <Button variant="secondary" size="small">17:15</Button>
-                            </div>
-                            <div>
-                                <h3 class="mb-2">I morgen <br class="hidden lg:block xl:hidden"> 18/5</h3>
-                                <Button variant="secondary" size="small">20:00</Button>
-                            </div>
-                            <div>
-                                <h3>Onsdag <br class="hidden lg:block xl:hidden"> 19/5</h3>
-                            </div>
-                            <div>
-                                <h3 class="mt-4 lg:mt-0">Torsdag <br class="hidden lg:block xl:hidden"> 20/5</h3>
-                                <div class="my-2">
-                                    <Button variant="secondary" size="small">14:00</Button>
+
+                                <div class="grid grid-cols-1 gap-2 content-start">
+                                    <div >I morgen <br class="hidden lg:block xl:hidden"> 18/5</div>
+                                    <div><Button variant="secondary" size="small">20:00</Button></div>
                                 </div>
-                                <Button variant="secondary" size="small">20:00</Button>
-                            </div>
-                            <div>
-                                <h3 class="mb-2 mt-4 lg:mt-0">Fredag <br class="hidden lg:block xl:hidden"> 21/5</h3>
-                                <Button variant="secondary" size="small">20:00</Button>
-                            </div>
-                            <div>
-                                <h3 class="mb-2 mt-4 lg:mt-0">Lørdag <br class="hidden lg:block xl:hidden"> 22/5</h3>
-                                <Button variant="secondary" size="small">14:00</Button>
-                            </div>
-                        </section>
-                    </div>
-                </section>
-            </a></span>
-            </li>
-            )}
-        </ul> 
-        <!-- slut på alt hvad der omhandler lists til film i web -->
-</section>
+
+                                <div class="grid grid-cols-1 gap-2 content-start">
+                                    <div>Onsdag <br class="hidden lg:block xl:hidden"> 19/5</div>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-2 content-start">
+                                    <div>Torsdag <br class="hidden lg:block xl:hidden"> 20/5</div>
+                                    <div><Button variant="secondary" size="small">14:00</Button></div>
+                                    <div><Button variant="secondary" size="small">20:00</Button></div>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-2 content-start">
+                                    <div>Fredag <br class="hidden lg:block xl:hidden"> 21/5</div>
+                                    <div><Button variant="secondary" size="small">20:00</Button></div>
+                                </div>
+
+                                <div class="grid grid-cols-1 gap-2 content-start">
+                                    <div>Lørdag <br class="hidden lg:block xl:hidden"> 22/5</div>
+                                    <div><Button variant="secondary" size="small">14:00</Button></div>
+                                </div>
+                            </section>
+                        </div>   
+                    </section>
+                )}
+            </div> 
+            <!-- slut på alt hvad der omhandler lists til film i web -->
+    </section>
 	
 </MainLayout>
+
+<script>
+
+
+import { animate, stagger, inView, scroll, timeline } from "motion";
+	
+const elementmedanimation2 = document.querySelector(".forward");
+inView(elementmedanimation2, () => {
+elementmedanimation2.classList.add("fade-in-fwd");
+
+
+});  
+
+</script>
+<style>
+
+
+	.fade-in-fwd {
+	-webkit-animation: fade-in-fwd 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-fwd 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-5-29 12:11:43
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in-fwd
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-in-fwd {
+  0% {
+    -webkit-transform: translateZ(-80px);
+            transform: translateZ(-80px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+</style>

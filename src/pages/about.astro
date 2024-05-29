@@ -17,7 +17,7 @@ const {frontmatter} = Astro.props;
       	<!-- Overskriften med stregerne, hvor vi bruger hidden for at gemme stregerne i mobil -->
 			<div class=" text-center  lg:mx-24">
 				
-				<h1 class="mb-10 font-mos text-5xl lg:text-7xl w-full px-2 md:px-4 animate__animated animate__shakeX">Formidable filmoplevelser 
+				<h1 class="mb-10 font-mos text-5xl lg:text-7xl w-full px-2 md:px-4">Formidable filmoplevelser 
                      siden 1935</h1> 
 			
 		
@@ -26,7 +26,7 @@ const {frontmatter} = Astro.props;
 
         <section class="mx-7 mb-10 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-20 lg:mb-20">
                 <div class="flex items-center justify-center"><Image src={kinoet} alt="" class=" w-full"/></div>
-                <div class="flex flex-col justify-center">
+                <div class="left flex flex-col justify-center ">
                     <h3 class="text-2xl mb-6 font-medium font-mos">Altid en god oplevelse</h3>
                     <p class="font-mont text-base mb-4">Det betyder meget for os, at en tur i  biografen er hyggelig. I vinterhalvåret er der ild i pejsen. Om sommeren  åbner vi dørene ud til den lille gård. Vi har gjort meget ud af at  indrette et stemningsfuldt caféområde i biografens foyer og vil gerne  sikre kvalitet i vores caféudvalg med bl.a. Hansen is, Fairtrade kaffe,  specialøl, vin og økologisk saft. Cafeen er indrettet med designermøbler  af bl.a. Børge Mogensen.</p>
                     <p class="font-mont text-base">Alle er velkomne i Gentofte Kino, uanset om man er kommet her fast  gennem mange år, eller man er på vej i biografen med mor og far til sin  første biograftur. Vores personale gør sig umage for altid at skabe en  god stemning for vores gæster.</p>
@@ -35,7 +35,7 @@ const {frontmatter} = Astro.props;
 
         <section class="mx-7 mb-16 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-20 lg:mb-32">
                 <div class="flex items-center justify-center lg:order-2"><Image src={kinoto} alt="" class=" w-full"/></div>
-                <div  class="flex flex-col justify-center">
+                <div  class="right flex flex-col justify-center">
                     <h3 class="text-2xl mb-6 font-medium font-mos">En historisk biograf</h3>
                     <p class="font-mont text-base mb-4">Gentofte Kino åbnede for offentligheden første gang den 31. marts 1938.  Alle var også dengang enige om, at Gentofte Kino var en gevinst for  biografmiljøet, og biografen blev sammenlignet med en af Københavns  dengang største biografer, Palladium.</p>
                     <p class="font-mont text-base">Gentofte Kinos biografsal var oprindelig indrettet med 564 stole. I 1989  blev alt i salen fjernet, bortset fra væggene og scenen. Herefter blev  gulvet reetableret og indretningen af den nuværende sal begyndte. I dag  rummer salen 290 pladser på gulvet. Biografen har også en loge med 6  unikke pladser. Logen er i øjeblikket under renovering, men vil snarest  stå klar til brug. </p>
@@ -82,7 +82,7 @@ const {frontmatter} = Astro.props;
         <section class="mx-7 mb-10 gap-6 grid grid-cols-1 lg:grid-cols-2 lg:gap-20 lg:mb-32">
 
             <div class="flex items-center justify-center"><Image src={kinotre} alt="" class=" w-full"/></div>
-            <div class="flex flex-col justify-center">
+            <div class="leftagain flex flex-col justify-center">
                 <p class="font-mont text-base mb-8">Salen har også en scene, hvor mange kunstnere, filmskabere og musikere  jævnligt optræder. Gentofte Kino afholder løbende særarrangementer, hvor  spændende gæster introducerer og perspektivere de gode filmoplevelser.  Hold øje med hjemmesiden, hvor nye særarrangementer løbende bliver  annonceret.</p>
                 <p class="font-mont text-base">Vi glæder os til at byde dig velkommen i byens bedste biograf!</p>
             </div>
@@ -93,8 +93,31 @@ const {frontmatter} = Astro.props;
     </article>
 </MainLayout>
 
+
+
 <script>
     import { animate, stagger, inView, scroll, timeline } from "motion";
+
+
+const elementmedanimation1 = document.querySelector(".right");
+inView(elementmedanimation1, () => {
+elementmedanimation1.classList.add("slide-right");
+
+});  
+
+const elementmedanimation2 = document.querySelector(".left");
+inView(elementmedanimation2, () => {
+elementmedanimation2.classList.add("slide-left");
+
+
+});  
+
+const elementmedanimation3 = document.querySelector(".leftagain");
+inView(elementmedanimation3, () => {
+elementmedanimation3.classList.add("slide-left");
+
+
+});  
 
     document.querySelectorAll(".parallaxcontainer").forEach(( parallaxcontainer ) => {
     const elementderskalparallaxes = parallaxcontainer.querySelector(".del1");
@@ -102,4 +125,88 @@ const {frontmatter} = Astro.props;
         target: elementderskalparallaxes
     });
     });
+
+
+	
+
 </script>
+
+<style>
+.slide-left {
+	-webkit-animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-5-29 11:46:45
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-left
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(300px);
+            transform: translateX(300px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+    .slide-right {
+	-webkit-animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-right 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+/* ----------------------------------------------
+ * Generated by Animista on 2024-5-29 11:25:59
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation slide-right
+ * ----------------------------------------
+ */
+@-webkit-keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-300px);
+            transform: translateX(-300px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+</style>
