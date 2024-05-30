@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 import gavekort from '../assets/images/gavekort-tillykke.svg';
 const {frontmatter} = Astro.props;
 ---
-<MainLayout title="Titel">
+<MainLayout title="Log ind">
     <article id="breadcrumb" class="hidden md:flex gap-2 font-mont text-lg font-light mx-auto md:mx-10 lg:mx-32 mt-8">
         <a href="/index.html">Start</a>
         <p>&#x3e</p>
@@ -28,7 +28,7 @@ const {frontmatter} = Astro.props;
                         <button @click="showFirst = true" class="">Gæst
                             <div :class="showFirst ? 'border-dark-500' : 'border-darkblue-300'" class="border-t-2 mt-2"></div>
                         </button>
-                        <button @click="showFirst = false" class="">Login
+                        <button @click="showFirst = false" class="">Log ind
                             <div :class="!showFirst ? 'border-dark-500' : 'border-darkblue-300'" class="border-t-2 mt-2"></div>
                         </button>
                     </div>

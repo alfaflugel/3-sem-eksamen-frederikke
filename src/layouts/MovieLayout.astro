@@ -6,7 +6,7 @@ import left from '../assets/images/arrow-left.svg';
 import right from '../assets/images/arrow-right.svg';
 const {frontmatter} = Astro.props;
 ---
-<MainLayout title="Titel">
+<MainLayout title={frontmatter.title}>
    
     <div class="flex flex-row text-center mx-7 md:mx-12 lg:mx-28 mt-36 lg:mt-44">
         <hr class="hidden md:block border-2 border-darkblue-600 w-full self-center">
