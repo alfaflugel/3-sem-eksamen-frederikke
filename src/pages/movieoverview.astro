@@ -40,6 +40,7 @@ const sorteredefilm = film.sort((a, b) => {
             <!-- alt hvad der omhandler lists til film i web -->
             <div class="grid gap-12">
                 { sorteredefilm.map(post => 
+                <a href={post.url}>
                     <section class="bg-beige-500 drop-shadow-drop font-mont flex flex-row lg:gap-10 items-center">
                         <div>
                             <img src={post.frontmatter.coverimage} alt={post.frontmatter.coveralt} class="object-cover max-w-prose p-10" />
@@ -84,6 +85,7 @@ const sorteredefilm = film.sort((a, b) => {
                             </section>
                         </div>   
                     </section>
+                    </a>
                 )}
             </div> 
             <!-- slut på alt hvad der omhandler lists til film i web -->
